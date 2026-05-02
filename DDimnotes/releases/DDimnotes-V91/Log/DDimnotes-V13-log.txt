@@ -1,0 +1,12 @@
+DDimnotes V13
+
+Base: DDimnotes V10.
+
+Changes:
+- Fixed metric thread recognition path for NAME records such as:
+  1 M_SCREWHO 6.000 -15.000 0 .. &0$-15
+- This now resolves to M6 with depth -15, same recognition path as:
+  1 m_screw0CSR 10.000 25.000 0.0000 .. 0.00 &
+- HOLE2MARK is not used to override the M size.
+- ti.dat is still read from AutoCAD Support File Search Path only. UserData/ti.dat is reference/maintenance data.
+- Assembly version: 1.0.13.0

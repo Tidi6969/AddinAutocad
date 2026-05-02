@@ -1,0 +1,8 @@
+DDimnotes V68
+
+- Hoan thien cac checkbox/mode con thieu trong muc Che do xu li.
+- Mode.OuterProfileVertexDims: dim tat ca cac dinh that cua closed polyline bien dang ngoai duoc chon; khong con dim 4 goc bbox thay cho dinh that.
+- Mode.OuterProfileVertexDims: neu dinh ngoai trung voi diem boundary dang bat (BoundaryXminYmin/XminYmax/XmaxYmin/XmaxYmax) thi bo qua diem do de tranh dim lap.
+- Mode.DepthHoleDims: dim cac lo tron hoac cung co XData hole va Depth khac 0 tren hinh chinh.
+- Mode.InnerProfileDims: dim cac dinh cua cac closed polyline nam ben trong MAIN va duoc chon.
+- Logic chinh tiep tuc chay theo tung checkbox Mode.* rieng le.

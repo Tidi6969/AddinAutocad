@@ -1,0 +1,671 @@
+HoleData_0(English_En)
+HoleData_Base
+DepthPrefix<Depth>
+Unit<mm>
+ViewFront<Front>
+ViewBack<Back>
+ThicknessLabel<thickness>
+KgUnit<kg>
+HrcLabel<HRC>
+Unknown<unknown>
+UnknownKey<unknown1>
+Unknown2<unknown 2>
+Unknown3<unknown 3>
+HoleData_HoleProcessMap
+gen<Drill><%%c>
+gen0<Drill><%%c>
+gen1<Drill><%%c>
+gen2<Drill><%%c>
+genr<Ream><%%c>
+pos<Wirecut><%%c>
+f_sink<Flat sink><%%c>
+g_sink<Guide sink><%%c>
+s_sink<Screw sink><%%c>
+m_screw<Thread><M>
+set_screw<Set screw><M>
+fm_screw<Female thread><M>
+HoleData_HoleTagMap
+AP<A><A-type punch>
+CAP<C><Special-shaped A punch>
+EjAP<E><A-type letter punch>
+EjBP<F><B-type letter punch>
+BP<B><B-type punch>
+CPP<G><Stripper-plate guide punch>
+IGPB<K><Inner guide post>
+IGPB2<K><Inner guide post (center-post type)>
+OGPB<O><Outer guide post (non-ball)>
+OGPB2<O><Outer guide post (ball-bearing type)>
+Nbl<WD><Outer guide bushing (non-ball)>
+Ndo<GG><Outer guide bushing (ball-bearing type)>
+TSCR<M><Upper die screw>
+FlatSCR<M><Flat head screw>
+BSCR<M><Lower die screw>
+GSCR<M><Guide plate screw>
+FSCR<PM><Hex socket flat head screw>
+ORG<U><Datum hole>
+POT<TD><Dimple/emboss punch point>
+SALA<SALA><Countersink>
+LIMITER<LIM><Inner stop/limiter post>
+TAP<J><Tapping punch (A-type)>
+PTAP<J><Tapping punch (guided type / pilot tap)>
+TTAP<J><Tapping punch (T/B type)>
+SAFE<L><Safety pin>
+PPIN<P><Locating pin (T-type, lifter-guided)>
+PPIN2SR<P><Locating pin (cross type, forming internal locating)>
+PPIN2<P><Locating pin (cross type, forming internal locating)>
+PPIN3<P><Locating pin (inner locating pin)>
+PPIN4<P><Locating pin (pointed tip)>
+PPIN5<P><Locating pin (round tip)>
+PPIN6<P><Locating pin (flat tip)>
+CSR<Q><Equal-height sleeve / spacer sleeve>
+GLS<R><Lifter dual-purpose pin>
+LPS<S><Stock stop pin (T-type)>
+LPS2<S><Stock stop pin (cross type)>
+LPS3<S><Stock stop pin (C-type)>
+LPS4<S><Stock stop pin (D-type)>
+AirSPR<DQ><Nitrogen gas spring>
+BSPR<M><Set screw blind threaded hole>
+ULi<ULI><Urethane (rubber)>
+SPR_SWF<T><Spring>
+SPR_SWL<T><Spring>
+SPR_SWM<T><Spring>
+SPR_SWH<T><Spring>
+SPR_SWB<T><Spring>
+SPR<T><Spring (flat-wire, coiled)>
+BLS<UD><Stock lifter block / ejector block>
+BLS2<UD><Stock lifter block / ejector block>
+PBLK<EN><Outer locator block>
+SIDE<SIDE><Pitch locating (side cutter)>
+GUI<GUI><Guide plate / strip guide plate>
+TROD<TT><Knock rod (dowel pin + eject rod)>
+EjCSR<J><Equal-height sleeve (ejector pin selected inside sleeve)>
+PIN<V><Dowel pin>
+PINScr<m><Threaded dowel pin>
+LLP<v><Locating pin>
+MA<MA><Lifter guide pin>
+ps_MA<GB><Guide bushing>
+AIR<AIR><Air blow pin>
+APP<A><A-type guide punch>
+BPP<A><B-type guide punch>
+P_BUSH1<G><DA die bushing>
+P_BUSH2<H><DH stripper-plate bushing>
+G_HBUSH<E><GB auxiliary guide bushing>
+BALL_BUSH<BUSH><GB ball-bearing auxiliary guide bushing>
+G_BUSH<F><GA auxiliary guide bushing>
+MSB<M><Equal-height screw / spacer screw>
+SetScr<M><Set screw (grub screw)>
+UP_LTH<EB><Upper stop/limiter post>
+DN_LTH<EB><Lower stop/limiter post>
+DPP<D><D-type guide punch (cross type)>
+EJE<TT><Knock/hammering hole>
+MOLD<C><Die shank hole>
+ULi_SPRING<U><Urethane (rubber) 2>
+HO<b><>
+hiHO<a><>
+HoleData_CurverMap
+BUSH<o><bushing>
+CP4<m><bend/curve>
+CP1<i><piercing>
+HoleData_PlateMap
+handle<Handle plate><>
+u1<Upper plate 1><>
+u2<Upper plate 2><>
+cover<Cover plate><>
+up<Upper plate><>
+ub<Upper backing plate><>
+ub0<Upper backing plate 0><>
+ub2<Upper backing plate 2><>
+up_lth<Upper limiter plate><>
+ph<Punch holder plate><>
+ph2<Punch holder plate 2><>
+ps<Stripper plate><>
+ps2<Stripper plate 2><>
+pps<Backing stripper plate><>
+pps2<Backing stripper plate 2><>
+die<Die plate><>
+die2<Die plate 2><>
+lb<Lower backing plate><>
+lb2<Lower backing plate 2><>
+lb3<Lower backing plate 3><>
+dn_lth<Lower limiter plate><>
+lp<Lower plate><>
+b1<Base plate 1><>
+b2<Base plate 2><>
+guide<Guide plate><>
+side<Side plate><>
+eject<Ejector plate><>
+eject2<Ejector plate 2><>
+HoleData_HeaderLayerMap
+handle_p<handle>
+u1_p<u1>
+u2_p<u2>
+cover_p<cover>
+up_p<up>
+ub_p<ub>
+ub0_p<ub0>
+ub2_p<ub2>
+up_lth_p<up_lth>
+ph_p<ph>
+ph2_p<ph2>
+ps_p<ps>
+ps2_p<ps2>
+pps_p<pps>
+pps2_p<pps2>
+die_p<die>
+die2_p<die2>
+lb_p<lb>
+lb2_p<lb2>
+lb3_p<lb3>
+dn_lth_p<dn_lth>
+lp_p<lp>
+b1_p<b1>
+b2_p<b2>
+guide_p<guide>
+side_p<side>
+eject_p<eject>
+eject2_p<eject2>
+PUNCH<PU>
+------
+HoleData_1(Vietnamese_Vn)
+HoleData_Base
+DepthPrefix<Chiều sâu>
+Unit<mm>
+ViewFront<Mặt trước>
+ViewBack<Mặt sau>
+ThicknessLabel<chiều dày>
+KgUnit<kg>
+HrcLabel<HRC>
+Unknown<không xác định>
+UnknownKey<không xác định 1>
+Unknown2<không xác định 2>
+Unknown3<không xác định 3>
+HoleData_HoleProcessMap
+gen<Khoan><%%c>
+gen0<Khoan><%%c>
+gen1<Khoan><%%c>
+gen2<Khoan><%%c>
+genr<Doa><%%c>
+pos<Cắt dây><%%c>
+f_sink<Khoét bậc phẳng><%%c>
+g_sink<Khoét bậc dẫn hướng><%%c>
+s_sink<Khoét bậc vít><%%c>
+m_screw<Tarô><M>
+set_screw<Vít chặn><M>
+fm_screw<Tarô âm><M>
+HoleData_HoleTagMap
+AP<A><Chày loại A>
+CAP<C><Chày A biên dạng đặc biệt>
+EjAP<E><Chày chữ loại A>
+EjBP<F><Chày chữ loại B>
+BP<B><Chày loại B>
+CPP<G><Chày dẫn hướng tấm stripper>
+IGPB<K><Trụ dẫn hướng trong>
+IGPB2<K><Trụ dẫn hướng trong loại trụ giữa>
+OGPB<O><Trụ dẫn hướng ngoài không bi>
+OGPB2<O><Trụ dẫn hướng ngoài loại bi>
+Nbl<WD><Bạc dẫn hướng ngoài không bi>
+Ndo<GG><Bạc dẫn hướng ngoài loại bi>
+TSCR<M><Vít khuôn trên>
+FlatSCR<M><Vít đầu chìm phẳng>
+BSCR<M><Vít khuôn dưới>
+GSCR<M><Vít tấm dẫn hướng>
+FSCR<PM><Vít lục giác đầu chìm phẳng>
+ORG<U><Lỗ chuẩn>
+POT<TD><Điểm chày dập lõm/dập nổi>
+SALA<SALA><Lỗ vát chìm>
+LIMITER<LIM><Trụ chặn trong>
+TAP<J><Chày tarô loại A>
+PTAP<J><Chày tarô dẫn hướng / tarô mồi>
+TTAP<J><Chày tarô loại T/B>
+SAFE<L><Chốt an toàn>
+PPIN<P><Chốt định vị loại T có dẫn lifter>
+PPIN2SR<P><Chốt định vị chữ thập tạo hình định vị trong>
+PPIN2<P><Chốt định vị chữ thập tạo hình định vị trong>
+PPIN3<P><Chốt định vị trong>
+PPIN4<P><Chốt định vị đầu nhọn>
+PPIN5<P><Chốt định vị đầu tròn>
+PPIN6<P><Chốt định vị đầu phẳng>
+CSR<Q><Ống canh bằng chiều cao / bạc kê>
+GLS<R><Chốt lifter đa năng>
+LPS<S><Chốt chặn phôi loại T>
+LPS2<S><Chốt chặn phôi loại chữ thập>
+LPS3<S><Chốt chặn phôi loại C>
+LPS4<S><Chốt chặn phôi loại D>
+AirSPR<DQ><Lò xo khí nitơ>
+BSPR<M><Lỗ ren mù cho vít chặn>
+ULi<ULI><Urethane cao su>
+SPR_SWF<T><Lò xo>
+SPR_SWL<T><Lò xo>
+SPR_SWM<T><Lò xo>
+SPR_SWH<T><Lò xo>
+SPR_SWB<T><Lò xo>
+SPR<T><Lò xo dây dẹt dạng cuộn>
+BLS<UD><Khối nâng phôi / khối đẩy>
+BLS2<UD><Khối nâng phôi / khối đẩy>
+PBLK<EN><Khối định vị ngoài>
+SIDE<SIDE><Định vị bước bằng dao hông>
+GUI<GUI><Tấm dẫn hướng / tấm dẫn phôi>
+TROD<TT><Ty đẩy gõ gồm chốt và ty đẩy>
+EjCSR<J><Ống canh bằng chiều cao có chọn chốt đẩy bên trong>
+PIN<V><Chốt định vị>
+PINScr<m><Chốt định vị có ren>
+LLP<v><Chốt định vị>
+MA<MA><Chốt dẫn hướng lifter>
+ps_MA<GB><Bạc dẫn hướng>
+AIR<AIR><Chốt thổi khí>
+APP<A><Chày dẫn hướng loại A>
+BPP<A><Chày dẫn hướng loại B>
+P_BUSH1<G><Bạc khuôn DA>
+P_BUSH2<H><Bạc tấm stripper DH>
+G_HBUSH<E><Bạc dẫn hướng phụ GB>
+BALL_BUSH<BUSH><Bạc dẫn hướng phụ bi GB>
+G_BUSH<F><Bạc dẫn hướng phụ GA>
+MSB<M><Vít bằng chiều cao / vít kê>
+SetScr<M><Vít chặn lục giác chìm>
+UP_LTH<EB><Trụ chặn trên>
+DN_LTH<EB><Trụ chặn dưới>
+DPP<D><Chày dẫn hướng loại D chữ thập>
+EJE<TT><Lỗ gõ/đẩy>
+MOLD<C><Lỗ chuôi khuôn>
+ULi_SPRING<U><Urethane cao su 2>
+HO<b><>
+hiHO<a><>
+HoleData_CurverMap
+BUSH<o><bạc>
+CP4<m><uốn/biên dạng cong>
+CP1<i><đột lỗ>
+HoleData_PlateMap
+handle<Tấm tay cầm><>
+u1<Tấm trên 1><>
+u2<Tấm trên 2><>
+cover<Tấm che><>
+up<Tấm trên><>
+ub<Tấm đệm trên><>
+ub0<Tấm đệm trên 0><>
+ub2<Tấm đệm trên 2><>
+up_lth<Tấm chặn trên><>
+ph<Tấm giữ chày><>
+ph2<Tấm giữ chày 2><>
+ps<Tấm stripper><>
+ps2<Tấm stripper 2><>
+pps<Tấm đệm stripper><>
+pps2<Tấm đệm stripper 2><>
+die<Tấm cối><>
+die2<Tấm cối 2><>
+lb<Tấm đệm dưới><>
+lb2<Tấm đệm dưới 2><>
+lb3<Tấm đệm dưới 3><>
+dn_lth<Tấm chặn dưới><>
+lp<Tấm dưới><>
+b1<Tấm đế 1><>
+b2<Tấm đế 2><>
+guide<Tấm dẫn hướng><>
+side<Tấm bên><>
+eject<Tấm đẩy><>
+eject2<Tấm đẩy 2><>
+HoleData_HeaderLayerMap
+handle_p<handle>
+u1_p<u1>
+u2_p<u2>
+cover_p<cover>
+up_p<up>
+ub_p<ub>
+ub0_p<ub0>
+ub2_p<ub2>
+up_lth_p<up_lth>
+ph_p<ph>
+ph2_p<ph2>
+ps_p<ps>
+ps2_p<ps2>
+pps_p<pps>
+pps2_p<pps2>
+die_p<die>
+die2_p<die2>
+lb_p<lb>
+lb2_p<lb2>
+lb3_p<lb3>
+dn_lth_p<dn_lth>
+lp_p<lp>
+b1_p<b1>
+b2_p<b2>
+guide_p<guide>
+side_p<side>
+eject_p<eject>
+eject2_p<eject2>
+PUNCH<PU>
+------
+HoleData_2(Chinese_Cn)
+HoleData_Base
+DepthPrefix<深度>
+Unit<mm>
+ViewFront<正面>
+ViewBack<背面>
+ThicknessLabel<厚度>
+KgUnit<kg>
+HrcLabel<HRC>
+Unknown<未知>
+UnknownKey<未知1>
+Unknown2<未知2>
+Unknown3<未知3>
+HoleData_HoleProcessMap
+gen<钻孔><%%c>
+gen0<钻孔><%%c>
+gen1<钻孔><%%c>
+gen2<钻孔><%%c>
+genr<铰孔><%%c>
+pos<线切割><%%c>
+f_sink<平底沉孔><%%c>
+g_sink<导向沉孔><%%c>
+s_sink<螺钉沉孔><%%c>
+m_screw<攻牙><M>
+set_screw<止付螺钉><M>
+fm_screw<内螺纹><M>
+HoleData_HoleTagMap
+AP<A><A型冲头>
+CAP<C><异形A型冲头>
+EjAP<E><A型字母冲头>
+EjBP<F><B型字母冲头>
+BP<B><B型冲头>
+CPP<G><脱料板导向冲头>
+IGPB<K><内导柱>
+IGPB2<K><内导柱（中心柱型）>
+OGPB<O><外导柱（无钢珠）>
+OGPB2<O><外导柱（滚珠型）>
+Nbl<WD><外导套（无钢珠）>
+Ndo<GG><外导套（滚珠型）>
+TSCR<M><上模螺钉>
+FlatSCR<M><平头螺钉>
+BSCR<M><下模螺钉>
+GSCR<M><导板螺钉>
+FSCR<PM><内六角平头螺钉>
+ORG<U><基准孔>
+POT<TD><凹点/压印冲头点>
+SALA<SALA><沉头孔>
+LIMITER<LIM><内限位柱>
+TAP<J><攻牙冲头（A型）>
+PTAP<J><导向攻牙冲头/先导攻牙>
+TTAP<J><攻牙冲头（T/B型）>
+SAFE<L><安全销>
+PPIN<P><定位销（T型，带升料导向）>
+PPIN2SR<P><定位销（十字型，成形内定位）>
+PPIN2<P><定位销（十字型，成形内定位）>
+PPIN3<P><内定位销>
+PPIN4<P><尖头定位销>
+PPIN5<P><圆头定位销>
+PPIN6<P><平头定位销>
+CSR<Q><等高套/垫套>
+GLS<R><升料两用销>
+LPS<S><料带止动销（T型）>
+LPS2<S><料带止动销（十字型）>
+LPS3<S><料带止动销（C型）>
+LPS4<S><料带止动销（D型）>
+AirSPR<DQ><氮气弹簧>
+BSPR<M><止付螺钉盲螺纹孔>
+ULi<ULI><聚氨酯橡胶>
+SPR_SWF<T><弹簧>
+SPR_SWL<T><弹簧>
+SPR_SWM<T><弹簧>
+SPR_SWH<T><弹簧>
+SPR_SWB<T><弹簧>
+SPR<T><扁线卷弹簧>
+BLS<UD><升料块/顶出块>
+BLS2<UD><升料块/顶出块>
+PBLK<EN><外定位块>
+SIDE<SIDE><步距定位（侧刃）>
+GUI<GUI><导板/料带导板>
+TROD<TT><敲出杆（销钉+顶杆）>
+EjCSR<J><等高套（套内选择顶针）>
+PIN<V><销钉>
+PINScr<m><带螺纹销钉>
+LLP<v><定位销>
+MA<MA><升料导向销>
+ps_MA<GB><导套>
+AIR<AIR><吹气销>
+APP<A><A型导向冲头>
+BPP<A><B型导向冲头>
+P_BUSH1<G><DA凹模衬套>
+P_BUSH2<H><DH脱料板衬套>
+G_HBUSH<E><GB辅助导套>
+BALL_BUSH<BUSH><GB滚珠辅助导套>
+G_BUSH<F><GA辅助导套>
+MSB<M><等高螺钉/垫螺钉>
+SetScr<M><止付螺钉>
+UP_LTH<EB><上限位柱>
+DN_LTH<EB><下限位柱>
+DPP<D><D型导向冲头（十字型）>
+EJE<TT><敲出/打击孔>
+MOLD<C><模柄孔>
+ULi_SPRING<U><聚氨酯橡胶2>
+HO<b><>
+hiHO<a><>
+HoleData_CurverMap
+BUSH<o><衬套>
+CP4<m><折弯/曲线>
+CP1<i><冲孔>
+HoleData_PlateMap
+handle<手柄板><>
+u1<上板1><>
+u2<上板2><>
+cover<盖板><>
+up<上板><>
+ub<上垫板><>
+ub0<上垫板0><>
+ub2<上垫板2><>
+up_lth<上限位板><>
+ph<冲头固定板><>
+ph2<冲头固定板2><>
+ps<脱料板><>
+ps2<脱料板2><>
+pps<脱料垫板><>
+pps2<脱料垫板2><>
+die<凹模板><>
+die2<凹模板2><>
+lb<下垫板><>
+lb2<下垫板2><>
+lb3<下垫板3><>
+dn_lth<下限位板><>
+lp<下板><>
+b1<底板1><>
+b2<底板2><>
+guide<导板><>
+side<侧板><>
+eject<顶出板><>
+eject2<顶出板2><>
+HoleData_HeaderLayerMap
+handle_p<handle>
+u1_p<u1>
+u2_p<u2>
+cover_p<cover>
+up_p<up>
+ub_p<ub>
+ub0_p<ub0>
+ub2_p<ub2>
+up_lth_p<up_lth>
+ph_p<ph>
+ph2_p<ph2>
+ps_p<ps>
+ps2_p<ps2>
+pps_p<pps>
+pps2_p<pps2>
+die_p<die>
+die2_p<die2>
+lb_p<lb>
+lb2_p<lb2>
+lb3_p<lb3>
+dn_lth_p<dn_lth>
+lp_p<lp>
+b1_p<b1>
+b2_p<b2>
+guide_p<guide>
+side_p<side>
+eject_p<eject>
+eject2_p<eject2>
+PUNCH<PU>
+------
+HoleData_3(Japan_Jp)
+HoleData_Base
+DepthPrefix<深さ>
+Unit<mm>
+ViewFront<表側>
+ViewBack<裏側>
+ThicknessLabel<板厚>
+KgUnit<kg>
+HrcLabel<HRC>
+Unknown<不明>
+UnknownKey<不明1>
+Unknown2<不明2>
+Unknown3<不明3>
+HoleData_HoleProcessMap
+gen<穴あけ><%%c>
+gen0<穴あけ><%%c>
+gen1<穴あけ><%%c>
+gen2<穴あけ><%%c>
+genr<リーマ><%%c>
+pos<ワイヤーカット><%%c>
+f_sink<平底座ぐり><%%c>
+g_sink<ガイド座ぐり><%%c>
+s_sink<ねじ座ぐり><%%c>
+m_screw<タップ><M>
+set_screw<止めねじ><M>
+fm_screw<めねじ><M>
+HoleData_HoleTagMap
+AP<A><Aタイプパンチ>
+CAP<C><異形Aタイプパンチ>
+EjAP<E><Aタイプ文字パンチ>
+EjBP<F><Bタイプ文字パンチ>
+BP<B><Bタイプパンチ>
+CPP<G><ストリッパープレートガイドパンチ>
+IGPB<K><内側ガイドポスト>
+IGPB2<K><内側ガイドポスト（センターポスト型）>
+OGPB<O><外側ガイドポスト（ボールなし）>
+OGPB2<O><外側ガイドポスト（ボールベアリング型）>
+Nbl<WD><外側ガイドブッシュ（ボールなし）>
+Ndo<GG><外側ガイドブッシュ（ボールベアリング型）>
+TSCR<M><上型ねじ>
+FlatSCR<M><皿頭ねじ>
+BSCR<M><下型ねじ>
+GSCR<M><ガイドプレートねじ>
+FSCR<PM><六角穴付き皿頭ねじ>
+ORG<U><基準穴>
+POT<TD><ディンプル/エンボスパンチ点>
+SALA<SALA><皿もみ>
+LIMITER<LIM><内側ストップ/リミッターポスト>
+TAP<J><タップパンチ（Aタイプ）>
+PTAP<J><ガイド付きタップパンチ/パイロットタップ>
+TTAP<J><タップパンチ（T/Bタイプ）>
+SAFE<L><安全ピン>
+PPIN<P><位置決めピン（Tタイプ、リフターガイド）>
+PPIN2SR<P><位置決めピン（クロスタイプ、成形内側位置決め）>
+PPIN2<P><位置決めピン（クロスタイプ、成形内側位置決め）>
+PPIN3<P><内側位置決めピン>
+PPIN4<P><先端とがり位置決めピン>
+PPIN5<P><丸先位置決めピン>
+PPIN6<P><平先位置決めピン>
+CSR<Q><等高スリーブ/スペーサースリーブ>
+GLS<R><リフター兼用ピン>
+LPS<S><材料ストップピン（Tタイプ）>
+LPS2<S><材料ストップピン（クロスタイプ）>
+LPS3<S><材料ストップピン（Cタイプ）>
+LPS4<S><材料ストップピン（Dタイプ）>
+AirSPR<DQ><窒素ガススプリング>
+BSPR<M><止めねじ用止まりねじ穴>
+ULi<ULI><ウレタンゴム>
+SPR_SWF<T><スプリング>
+SPR_SWL<T><スプリング>
+SPR_SWM<T><スプリング>
+SPR_SWH<T><スプリング>
+SPR_SWB<T><スプリング>
+SPR<T><平線コイルスプリング>
+BLS<UD><材料リフターブロック/エジェクターブロック>
+BLS2<UD><材料リフターブロック/エジェクターブロック>
+PBLK<EN><外側ロケーターブロック>
+SIDE<SIDE><ピッチ位置決め（サイドカッター）>
+GUI<GUI><ガイドプレート/ストリップガイドプレート>
+TROD<TT><ノックロッド（ダウエルピン+エジェクトロッド）>
+EjCSR<J><等高スリーブ（スリーブ内エジェクタピン選択）>
+PIN<V><ダウエルピン>
+PINScr<m><ねじ付きダウエルピン>
+LLP<v><位置決めピン>
+MA<MA><リフターガイドピン>
+ps_MA<GB><ガイドブッシュ>
+AIR<AIR><エアブローピン>
+APP<A><Aタイプガイドパンチ>
+BPP<A><Bタイプガイドパンチ>
+P_BUSH1<G><DAダイブッシュ>
+P_BUSH2<H><DHストリッパープレートブッシュ>
+G_HBUSH<E><GB補助ガイドブッシュ>
+BALL_BUSH<BUSH><GBボールベアリング補助ガイドブッシュ>
+G_BUSH<F><GA補助ガイドブッシュ>
+MSB<M><等高ねじ/スペーサーねじ>
+SetScr<M><止めねじ>
+UP_LTH<EB><上側ストップ/リミッターポスト>
+DN_LTH<EB><下側ストップ/リミッターポスト>
+DPP<D><Dタイプガイドパンチ（クロスタイプ）>
+EJE<TT><ノック/打撃穴>
+MOLD<C><ダイシャンク穴>
+ULi_SPRING<U><ウレタンゴム2>
+HO<b><>
+hiHO<a><>
+HoleData_CurverMap
+BUSH<o><ブッシュ>
+CP4<m><曲げ/カーブ>
+CP1<i><ピアス>
+HoleData_PlateMap
+handle<ハンドルプレート><>
+u1<上プレート1><>
+u2<上プレート2><>
+cover<カバープレート><>
+up<上プレート><>
+ub<上バッキングプレート><>
+ub0<上バッキングプレート0><>
+ub2<上バッキングプレート2><>
+up_lth<上リミッタープレート><>
+ph<パンチホルダープレート><>
+ph2<パンチホルダープレート2><>
+ps<ストリッパープレート><>
+ps2<ストリッパープレート2><>
+pps<ストリッパーバッキングプレート><>
+pps2<ストリッパーバッキングプレート2><>
+die<ダイプレート><>
+die2<ダイプレート2><>
+lb<下バッキングプレート><>
+lb2<下バッキングプレート2><>
+lb3<下バッキングプレート3><>
+dn_lth<下リミッタープレート><>
+lp<下プレート><>
+b1<ベースプレート1><>
+b2<ベースプレート2><>
+guide<ガイドプレート><>
+side<サイドプレート><>
+eject<エジェクタープレート><>
+eject2<エジェクタープレート2><>
+HoleData_HeaderLayerMap
+handle_p<handle>
+u1_p<u1>
+u2_p<u2>
+cover_p<cover>
+up_p<up>
+ub_p<ub>
+ub0_p<ub0>
+ub2_p<ub2>
+up_lth_p<up_lth>
+ph_p<ph>
+ph2_p<ph2>
+ps_p<ps>
+ps2_p<ps2>
+pps_p<pps>
+pps2_p<pps2>
+die_p<die>
+die2_p<die2>
+lb_p<lb>
+lb2_p<lb2>
+lb3_p<lb3>
+dn_lth_p<dn_lth>
+lp_p<lp>
+b1_p<b1>
+b2_p<b2>
+guide_p<guide>
+side_p<side>
+eject_p<eject>
+eject2_p<eject2>
+PUNCH<PU>

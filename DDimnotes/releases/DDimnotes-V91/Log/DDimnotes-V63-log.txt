@@ -1,0 +1,8 @@
+DDimnotes V63
+- Sửa đúng logic "Xóa trùng kích thước": mặc định bật = 1. Khi bật giữ kiểu gộp trùng hiện tại (ví dụ 2-10). Khi tắt sẽ tạo kích thước cho từng điểm được chọn, không gộp theo tọa độ X/Y.
+- Thêm ô dung sai cạnh từng mục trong A. Chế độ xử lý. Cú pháp: trống = không ghi; X = dung sai đối xứng ±X; X/Y = dung sai lệch +X/-Y.
+- Thêm mục Chiều dày, Lỗ hình chiếu, Chiều sâu hình chiếu vào bảng chế độ xử lý.
+- Chiều dày hình chiếu dùng chế độ Đo đường bao ngoài: Đo thẳng giữ kiểu cũ; Đo tọa độ dùng mặt xa = 0 và mặt gần = T.
+- Lỗ hình chiếu đo các lỗ đã vẽ trên hình chiếu, gốc tọa độ được gióng từ hình chiếu chính và mặt xa của hình chiếu.
+- Chiều sâu hình chiếu đo các lỗ có depth trên hình chiếu.
+- Không thay đổi logic lỗ ren thường V58, Line + XData ren, set_screwBSPR/MSW.

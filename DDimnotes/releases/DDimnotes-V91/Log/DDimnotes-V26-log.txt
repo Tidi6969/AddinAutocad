@@ -1,0 +1,7 @@
+V26
+- Sửa logic khoảng cách Notes theo yêu cầu:
+  NotesGap = NotesScale * dimTextHeight.
+- Không còn tính NotesGap = NotesScale * SideViewGap.
+- Tỉ lệ đặt hình chiếu cạnh và tỉ lệ đặt Notes đều tính trực tiếp theo cỡ chữ dim.
+- Cập nhật nhãn hộp thoại: Tỉ lệ đặt Notes (so với cỡ chữ dim).
+- Version: 1.0.26.0.

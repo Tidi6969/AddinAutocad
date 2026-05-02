@@ -1,0 +1,5 @@
+DDimnotes V85
+- Fixed tolerance display for side-view thickness dimensions.
+- Side thickness ordinate dimensions now keep AutoCAD measured placeholder <> when numeric tolerance is used, so CAD tolerance properties (Dimtol/Dimtp/Dimtm/Dimtolj) can display correctly.
+- Kept previous positive fixed text behavior for side thickness when tolerance is empty or non-numeric.
+- Rechecked all current tolerance entry points: boundary linear/ordinate, outer/inner profile vertices, hole centers, arc centers, depth holes, side projection holes, side projection depths, and side thickness.

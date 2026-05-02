@@ -1,0 +1,7 @@
+DDimnotes V49 log
+
+- Built from V48, keeping the accepted V41/V48 set_screwBSPR baseline.
+- Removed the extra separate core/tap-drill through-hole rectangle from set_screw drawing.
+- The large/nominal set_screw diameter continues to use the same m_screw-style ThreadFeaturePolylines.
+- Purpose: avoid displaying three visible set_screw layers (nominal + m_screw root + extra small through hole).
+- Assembly version: 1.0.49.0

@@ -1,0 +1,4 @@
+DDimnotes V80
+- Fixed position-based user settings loading by preserving blank lines in DDimnotes_settings.ini.
+- Prevented tolerance/default blank fields from shifting layer option values into the wrong settings.
+- Updated default UserData/DDimnotes_settings.ini with explicit layer option lines for side details, notes, marks, dimensions, side holes, and side outline.

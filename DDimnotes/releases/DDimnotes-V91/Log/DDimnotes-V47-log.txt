@@ -1,0 +1,8 @@
+DDimnotes V47
+
+- Built from accepted V41 baseline for set_screwBSPR.
+- Updated assembly version to 1.0.47.0.
+- Changed set_screw nominal-depth drawing to use a dedicated no-extend polyline routine.
+- Removed the normal metric thread long root extension for set_screw only.
+- Through core hole drawing is unchanged.
+- Normal metric thread drawing remains unchanged.

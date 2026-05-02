@@ -1,0 +1,10 @@
+DDimnotes V24
+- Base: V23.
+- Reworked settings dialog layout to avoid clipped rows and cramped groups.
+- Mode combo now shows user-friendly Vietnamese names only; D/B/A remain internal keywords.
+- Angle combo remains a simple single-choice list.
+- Split spacing into two independent settings:
+  + Side-view spacing scale: multiplier of DIM text height.
+  + Notes spacing scale: multiplier of the actual main-to-side-view distance.
+- Side-view gap now uses SideViewDistanceScale * DIMTXT instead of fixed 8 * DIMTXT.
+- Version bumped to 1.0.24.0.

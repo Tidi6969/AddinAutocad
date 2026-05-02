@@ -1,0 +1,44 @@
+DDimnotes V60
+
+Nền: V59, giữ nguyên logic lỗ ren V58/V59 đang OK.
+
+Thay đổi chính:
+1. Việt hóa toàn bộ nhãn hộp thoại cài đặt:
+   - Notes -> Ghi chú.
+   - Mark Notes -> Ký hiệu ghi chú.
+   - SIDE / HÌNH CHIẾU -> HÌNH CHIẾU.
+   - DIM / KÍCH THƯỚC -> ĐO KÍCH THƯỚC.
+2. Bỏ hậu tố "x cỡ chữ" ở sau từng ô nhập tỉ lệ.
+   - Đưa về một dòng ghi chú chung: Các tỉ lệ dựa trên cỡ chữ.
+3. Cột HÌNH CHIẾU:
+   - Vị trí đặt hình chiếu có Tự động / Tùy chỉnh.
+   - Khoảng cách đổi tên thành Tỉ lệ khoảng cách hình chiếu.
+4. Cột ĐO KÍCH THƯỚC:
+   - Chuyển Tỉ lệ chữ đo về đúng nhóm ĐO KÍCH THƯỚC.
+   - Thêm checkbox Xóa trùng kích thước.
+   - Màu dim line / màu chữ Dim đổi nhãn ngắn thành Màu line / Màu chữ.
+5. Cột GHI CHÚ:
+   - Vị trí chèn ghi chú dùng đủ 4 đỉnh + Tùy chỉnh.
+   - Dịch Notes theo X/Y đổi thành Tỉ lệ dịch X/Y.
+   - Màu chữ ghi chú dùng nhãn Màu chữ.
+6. Nhóm KÝ HIỆU GHI CHÚ:
+   - Thêm kiểu đặt ký hiệu: Tự động / Tâm.
+   - Đưa các giá trị cố định trong code ra bảng:
+     + Góc bắt đầu.
+     + Bước xoay.
+     + Số lần thử quanh 1 vòng.
+     + Khoảng cách ký hiệu.
+     + Bước nhảy vòng.
+     + Khoảng cách tối thiểu.
+7. Settings file bổ sung dòng 31-36:
+   - Dòng 31: Xóa trùng kích thước.
+   - Dòng 32: Kiểu đặt ký hiệu, 0=Tự động, 1=Tâm.
+   - Dòng 33: Góc bắt đầu.
+   - Dòng 34: Bước xoay.
+   - Dòng 35: Số lần thử quanh 1 vòng.
+   - Dòng 36: Bước nhảy vòng.
+
+Không thay đổi:
+- Logic lỗ ren thường V58/V59.
+- Logic Line + XData ren.
+- Logic set_screwBSPR/MSW.

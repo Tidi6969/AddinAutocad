@@ -1,0 +1,7 @@
+DDimnotes V40
+
+- Updated assembly version to 1.0.40.0.
+- Added processing mode N.
+- Mode N uses the same projection/dimension scope as mode D, but forces Notes and Note marks OFF for that run.
+- Added Form_ModeNoNotes key to embedded UserData/lang.dat for English, Vietnamese, Chinese, and Japanese.
+- Settings file mode index now supports 3 = N / No Notes while keeping old indexes 0=D, 1=B, 2=A compatible.

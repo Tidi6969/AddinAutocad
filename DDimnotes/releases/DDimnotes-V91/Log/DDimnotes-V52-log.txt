@@ -1,0 +1,17 @@
+DDimnotes V52 log
+
+Scope:
+- Base: V51, preserving accepted set_screwBSPR behavior and V51 side-thread separation.
+- Safe improvement for side-face metric threads whose source entity is a Line centerline.
+
+Changes:
+- Added plan-range validation for SideThreadRec projection:
+  + View 90/270: projected X of source Line must be inside MAIN X range.
+  + View 0/180: projected Y of source Line must be inside MAIN Y range.
+- Added clamp guard for generated side-thread helper points so the side-thread symbol does not escape outside the MAIN side-view thickness range.
+- Kept depth ignored for side-face Line thread data.
+- Kept Line + metric-thread XData separated from normal Circle/front-view hole logic.
+- Normal Circle-based holes/threads and set_screwBSPR logic are left unchanged.
+
+Version:
+- Assembly version: 1.0.52.0

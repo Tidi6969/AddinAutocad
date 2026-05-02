@@ -1,0 +1,7 @@
+DDimnotes V19
+- Dimension setup changed to match original DTE Lisp values for all DIM parameters except requested overrides.
+- DIMCLRD and DIMCLRE are read from MIS_SET.SET line 27.
+- DIMCLRT is read from MIS_SET.SET line 26.
+- DIMTXSTY / dimension text style is not overridden; it remains from the active DimStyle.
+- Dimension object property copy uses case-insensitive reflection so Dimclrd/Dimclre/Dimclrt Color overrides are applied more reliably.
+- Version bumped to 1.0.19.0.

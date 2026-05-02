@@ -1,0 +1,15 @@
+DDimnotes V62
+
+Baseline:
+- Built from V61.
+- Keep V60 settings/form logic and V58 threaded-hole logic unchanged.
+
+Fixes:
+1. Fixed AutoCAD .NET compile error CS0117 because Autodesk.AutoCAD.Geometry.Vector3d does not provide Vector3d.Zero in the target API.
+2. Replaced Vector3d.Zero usages in the custom side-view DrawJig move logic with new Vector3d(0.0, 0.0, 0.0).
+
+Notes:
+- No geometry behavior changes.
+- No changes to set_screwBSPR/MSW logic.
+- No changes to Line + XData thread drawing logic.
+- No changes to V58 normal threaded-hole overflow logic.

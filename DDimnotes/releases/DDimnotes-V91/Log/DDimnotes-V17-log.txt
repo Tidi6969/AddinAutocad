@@ -1,0 +1,5 @@
+DDimnotes V17
+- Fixed dimension color overrides: Dimclrd/Dimclre/Dimclrt are AutoCAD Color objects, not raw integer ACI values.
+- V16 assigned integer ACI values through reflection; AutoCAD rejected them silently, so created dimensions stayed ByLayer.
+- Kept current DimStyle/current DIM environment as the base; requested overrides remain DIMTXT, DIMASZ=DIMTXT/3, DIMCLRD/DIMCLRE from MIS_SET line 27, DIMCLRT from MIS_SET line 26.
+- UserData remains reference-only; runtime reads MIS_SET.SET and ti.dat from AutoCAD Support File Search Path.

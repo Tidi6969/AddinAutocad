@@ -1,0 +1,7 @@
+DDimnotes V23
+
+- Version bumped to 1.0.23.0.
+- Settings dialog layout adjusted to avoid clipped rows/controls.
+- Mode selection changed from radio buttons to a single dropdown list.
+- Projection angle selection changed from radio buttons to a single dropdown list.
+- Kept WinForms modal dialog and existing DDimnotes V22 behavior.

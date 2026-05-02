@@ -1,0 +1,11 @@
+V29
+- Added Dim offset scale in Settings dialog section 5.
+- Replaced read-only Dim text height row with: Dim offset scale.
+- Formula: DimOffset = DimOffsetScale * DimTextHeight.
+- Default DimOffsetScale = 3.00, matching previous behavior.
+- Dimension baseline positions now use the setting:
+  + xLineBottomY = Ymin - DimOffset
+  + xLineTopY = Ymax + DimOffset
+  + yLineLeftX = Xmin - DimOffset
+  + yLineRightX = Xmax + DimOffset
+- Version: 1.0.29.0.

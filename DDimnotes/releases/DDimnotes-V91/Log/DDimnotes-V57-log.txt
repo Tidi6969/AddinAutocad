@@ -1,0 +1,25 @@
+DDimnotes V57 - Normal metric thread small-hole correction
+
+Baseline:
+- Rebuilt from V54 baseline.
+- The incorrect V55/V56 normal-thread changes are not used.
+
+Implemented rule for normal metric thread holes:
+- T = plate thickness.
+- D = hole/thread depth from XData.
+- L = normal total drawn length of the thread feature from start point to the farthest drawn end point.
+
+Cases:
+1. If L <= T:
+   - Draw normal metric thread exactly as before.
+2. If L > T and D <= T:
+   - Keep the large/outer thread contour drawing as normal.
+   - Replace only the small/root thread hole (diameter = nominal thread diameter - pitch) with a through hole across the plate thickness.
+   - Remove the small/root end peak.
+3. Otherwise:
+   - Draw normal metric thread exactly as before.
+
+Preserved:
+- V54 Line + XData thread entity output (Circle/Arc/Line) is unchanged.
+- set_screwBSPR / MSW handling is unchanged.
+- Project ZIP structure remains source + Reference + UserData + Log only; no bin/obj/Properties.

@@ -1,0 +1,5 @@
+DDimnotes V81
+- Sửa xử lý dung sai dimension: dung sai dạng số không còn ghép vào DimensionText.
+- Dung sai số dạng ±a, %%pa, +-a, +a/-b, a/b, hoặc một số đơn được áp bằng thuộc tính DIMTOL/DIMTP/DIMTM của AutoCAD Dimension.
+- Giữ DimensionText chỉ cho nội dung cơ bản như <>, số lượng-<>, hoặc fallback text phi số.
+- Trường hợp dung sai phi số như H7/g6 vẫn fallback thành text để không mất dữ liệu nhập.

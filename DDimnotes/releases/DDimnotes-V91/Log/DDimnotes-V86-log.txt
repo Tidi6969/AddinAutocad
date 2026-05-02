@@ -1,0 +1,5 @@
+DDimnotes V86
+- Added NoteWireHole to the Settings dialog as a note-processing option.
+- NoteWireHole is saved/read from DDimnotes_settings.ini at the end of the position-based settings file to avoid shifting existing values.
+- Runtime now applies NoteWireHole to NtConfig before note generation.
+- Added multilingual labels for the new NoteWireHole checkbox in lang.dat.

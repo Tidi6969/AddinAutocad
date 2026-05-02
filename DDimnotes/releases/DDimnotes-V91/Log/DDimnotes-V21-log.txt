@@ -1,0 +1,8 @@
+DDimnotes V21 change log
+- Added a modal WinForms settings dialog opened by S at the main prompt.
+- Dialog uses AutoCAD Application.ShowModalDialog to match AutoCAD .NET modal UI workflow.
+- Settings dialog groups options into Mode, Projection Angle, Notes, Current Dim, and Data status.
+- Added toggles: Create Notes and Create Note Marks.
+- Kept runtime settings per open drawing/session; default remains Mode D and angle 270 when a drawing is reopened.
+- Kept dim override logic from V20: AutoCAD .NET GetDimstyleData/SetDimstyleData path.
+- Version bumped to 1.0.21.0.

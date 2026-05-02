@@ -1,0 +1,11 @@
+DDimnotes V38
+
+- Updated assembly version to 1.0.38.0.
+- Completed UserData/lang.dat for 4 embedded language blocks:
+  + Lang_0(English_En)
+  + Lang_1(Vietnamese_Vn)
+  + Lang_2(Chinese_Cn)
+  + Lang_3(Japan_Jp)
+- Chinese and Japanese blocks now contain the full current key list, matching English and Vietnamese.
+- Kept build-time language workflow from V37: UserData/lang.dat is EmbeddedResource and runtime only reads MIS_SET.SET line 28.
+- No change to command/business drawing logic.

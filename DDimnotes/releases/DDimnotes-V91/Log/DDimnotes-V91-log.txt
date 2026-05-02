@@ -1,0 +1,3 @@
+DDimnotes V91
+- Fixed compile error in DDimnotesNotes.cs by adding the missing DDimnotes.Utils namespace reference for StringUtils.
+- No logic changes from V90: DNOTES concentric-hole note grouping still uses tok1/code '+' from original XData before building note signatures.

@@ -1,0 +1,16 @@
+DDimnotes V14
+
+Base: DDimnotes V13
+
+Update:
+- Sửa logic gom nhóm lỗ đồng tâm.
+- Không còn gom tất cả lỗ chỉ vì cùng center.
+- Một nhóm lỗ bậc chỉ được ghép khi đủ điều kiện:
+  1) Cùng tâm.
+  2) Lỗ nhỏ hơn có dấu '+' trong tok1/code.
+- Trường hợp M_SCREWHO M6 depth -15 đồng tâm với GENPIN Ø22 depth -15 nhưng cả hai không có '+' sẽ được tách thành hai feature độc lập.
+- Giữ logic nhận diện lỗ ren M: NAME token[2] là cỡ M, NAME token[3] là depth.
+- Giữ đọc ti.dat từ AutoCAD Support File Search Path; UserData/ti.dat chỉ là file tham khảo/bảo dưỡng.
+
+Version:
+- Assembly version: 1.0.14.0

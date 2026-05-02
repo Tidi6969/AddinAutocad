@@ -1,0 +1,13 @@
+DDimnotes V16
+
+Dim update:
+- Keep current DimStyle as base for dimensions.
+- Generated dimensions now apply only these overrides:
+  + DIMTXT = entered dim text height.
+  + DIMCLRD/DIMCLRE = MIS_SET.SET line 27.
+  + DIMCLRT = MIS_SET.SET line 26.
+  + DIMASZ = DIMTXT / 3.
+- Removed broad DTE-style override call from DDimnotes command path.
+
+Version:
+- Assembly version: 1.0.16.0

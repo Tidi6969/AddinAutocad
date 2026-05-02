@@ -1,0 +1,7 @@
+DDimnotes V39
+
+- Updated assembly version to 1.0.39.0.
+- Added persistent DDimnotes DIM text height to DUser\DDimnotes_settings.ini line 11.
+- Main prompt default now uses saved DDimnotes text height when available; otherwise falls back to current AutoCAD DIMTXT.
+- Entering a valid text height at the main prompt now saves it immediately without requiring the Settings dialog.
+- Existing 11-line settings files remain compatible.

@@ -1,0 +1,14 @@
+V30
+- Reworked the settings dialog layout with a fixed row/cell system.
+- Removed abbreviation in the Dim section: "Tỉ lệ khoảng cách (theo cỡ chữ)" is now shown in full.
+- Aligned edit boxes, combo boxes, and read-only value fields to the same right column across sections 4 and 5.
+- Set small edit/list/value fields to a common width equal to 2/3 of the mode selection combo width.
+- Recalculated per-row spacing, group heights, and total dialog height to avoid overlapping text.
+- Version: 1.0.30.0.
+
+
+V31
+- Dialog input/list widths normalized to two thirds of the mode combo width.
+- Removed repeated scale notes from sections 4 and 5.
+- Added section 7 common note about Dimension text-height based scales.
+- Version: 1.0.31.0.

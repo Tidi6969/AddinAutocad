@@ -1,0 +1,30 @@
+DDimnotes V53 log
+
+Scope:
+- Base: V52.
+- Only changes the Line + metric-thread XData side-thread drawing branch.
+- Normal non-Line thread/hole drawing is kept unchanged.
+- set_screwBSPR logic is kept unchanged.
+
+Changes:
+- Line + metric-thread XData is now treated as a side-view/end-view thread symbol when the source Line direction matches the selected view direction group.
+- Direction matching uses 5 degree tolerance:
+  + 0 and 180 are the horizontal group.
+  + 90 and 270 are the vertical group.
+- If the Line direction does not match the view direction group, it is ignored.
+- New symbol drawing for matching Line threads:
+  + Inner full circle diameter = D thread - pitch.
+  + Outer partial arc diameter = D thread.
+  + Centerlines are drawn through the symbol center.
+  + Centerline total length = D + 1.2D = 2.2D.
+- Symbol center placement:
+  + Uses the same plan-axis coordinate as the selected view direction.
+  + Uses the middle of the generated side-view thickness direction.
+- Pitch handling:
+  + Reads pitch from ti.dat through the existing ThreadTable path.
+  + If pitch is missing, writes a user warning asking to add data to ti.dat.
+  + Still draws with fallback pitch = 1 so the command can continue.
+- Added safe linetype assignment fallback in DrawUtils. If a requested linetype cannot be assigned, the entity falls back to Continuous instead of failing.
+
+Version:
+- Assembly version: 1.0.53.0

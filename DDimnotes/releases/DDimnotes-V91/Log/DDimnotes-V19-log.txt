@@ -1,0 +1,9 @@
+DDimnotes V19
+
+Changes from V18:
+- Fixed dimension text style source.
+- DDimnotes-created dimensions now force the dimension object's text style to the TextStyleId stored in the current DimStyleTableRecord (db.Dimstyle).
+- This prevents AutoCAD current TEXTSTYLE / DIMTXSTY from overriding the text style of generated dimensions.
+- DTE-style overrides remain for other dimension variables.
+- MIS_SET.SET still controls only dim line color (line 27) and dim text color (line 26).
+- Version bumped to 1.0.19.0.

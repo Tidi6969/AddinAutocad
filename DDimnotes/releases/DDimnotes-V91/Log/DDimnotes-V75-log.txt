@@ -1,0 +1,5 @@
+DDimnotes V75
+- Fixed main ordinate leader anti-overlap logic introduced after V70.
+- Xmin/Ymin-side stacking keeps the previous positive direction behavior.
+- Xmax/Ymax-side stacking now pushes leaders back toward the opposite direction instead of forcing all leaders toward Xmax/Ymax.
+- Reworked the main ordinate stack to track used leader coordinates per side, so boundary, outer vertices, inner vertices, hole centers, arc centers, and depth-hole centers can share collision avoidance without direction bias.

@@ -1,0 +1,6 @@
+DDimnotes V88
+- Added UserData/holedata.dat as embedded build-time data for Notes content.
+- Synced HoleData_N index with Lang_N index: current Lang_N uses matching HoleData_N, fallback to HoleData_0.
+- Moved note text maps out of hard-coded NtConfig at runtime: Base, HoleProcessMap, HoleTagMap, CurverMap, PlateMap, HeaderLayerMap are loaded from holedata.dat.
+- Removed technical note placement/settings data from holedata.dat; settings remain in ini/MIS_SET/form.
+- Added HoleData.cs parser for the agreed format: HoleData_N(...), HoleData_GroupName, values in <...>, blocks split by ------.

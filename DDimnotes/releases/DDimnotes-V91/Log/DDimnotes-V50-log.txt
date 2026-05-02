@@ -1,0 +1,13 @@
+DDimnotes V50 log
+
+Purpose:
+- Correct the V49 set_screw drawing mistake.
+
+Changes:
+- Keep the large nominal set_screw contour drawn like m_screw.
+- Restore the through tap-drill/core hole.
+- Remove only the small/root m_screw polyline that creates the sharp small-hole end.
+- Normal m_screw drawing is unchanged.
+
+Version:
+- Assembly version: 1.0.50.0

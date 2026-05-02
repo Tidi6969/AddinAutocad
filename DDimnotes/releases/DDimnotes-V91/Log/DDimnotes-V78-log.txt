@@ -1,0 +1,7 @@
+DDimnotes V78
+- Sửa mục 3. Layer trong hộp thoại: bỏ dòng layer trùng "Lỗ vẽ ở hình chiếu", chỉ giữ một dòng "Lỗ/chi tiết trong hình chiếu".
+- Dòng "Lỗ/chi tiết trong hình chiếu" áp dụng chung cho lỗ, ren, set screw và các chi tiết bên trong hình chiếu cạnh.
+- Cho phép chọn "Layer của đối tượng gốc" ở dòng "Lỗ/chi tiết trong hình chiếu"; khi chọn mục này, lỗ trong hình chiếu dùng layer của đối tượng lỗ gốc, chi tiết khác dùng layer đối tượng chính phù hợp.
+- Giữ giới hạn tương thích: "Layer của đối tượng gốc" chỉ hợp lệ cho "Đường bao ngoài hình chiếu" và "Lỗ/chi tiết trong hình chiếu"; Ghi chú, Ký hiệu, Đường đo vẫn báo lỗi nếu chọn mục này.
+- Sửa ComboBox layer tách rõ DisplayName/Value để tránh lỗi hiển thị dính giá trị số như "10Hiện hành".
+- Rà lại áp layer: đường bao ngoài side view, chi tiết/lỗ side view, notes, ký hiệu notes và dimension đều lấy đúng tùy chọn layer tương ứng.

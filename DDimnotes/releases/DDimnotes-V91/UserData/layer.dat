@@ -1,0 +1,25 @@
+(c)Hiện hành
+(src)Layer đối tượng gốc
+(p)Layer Tấm
+(d)DIM 
+(o)*_O 
+(w)*_W  
+(m)*_M  
+(_t)*_TXT
+(t)TEXT
+(*)0 
+(*_)1
+
+//(src)Layer đối tượng gốc Chỉ tương thích với Đường bao hình chiếu và Lỗ vẽ ở hình chiếu.
+//(d)DIM Layer TEXT
+//(o)*_O Layer có tấm chính hậu tố là O Ví dụ LP_O
+//(w)*_W Layer có tấm chính hậu tố là W
+//(m)*_M Layer có tấm chính hậu tố là M
+//(_t)*_TXT Layer có tấm chính hậu tố là TXT
+//(t)TEXT Layer TEXT
+//(*)0 Trong trường hợp dấu * . Tôi muốn thêm layer thì chỉ cần thêm (*)+tên layer là thêm được .
+//(*_)1 Trong trường hợp dấu *_ . Tôi muốn thêm layer thì chỉ cần thêm (*_)+ hậu tố là thêm được .
+// Tệp layer.dat để trong UserData có sẵn của zip 
+// Tệp này  chỉ dùng khi build dll chứ không tham gia khi chạy 
+// Tệp này  chỉ dùng khi build dll chứ không tham gia khi chạy 
+// dịch những layer này ở trong lang.dat theo tất cả ngôn ngữ. cái sau này tôi sửa thêm thì không cần dịch nhưng vẫn phải nhận dữ liệu

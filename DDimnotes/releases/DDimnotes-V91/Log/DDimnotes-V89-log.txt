@@ -1,0 +1,9 @@
+DDimnotes V89
+- Thêm danh sách chọn kiểu chữ cho dòng Tạo ghi chú và dòng Đánh ký hiệu.
+- Dòng Đánh ký hiệu ghi chú trên hình gốc đổi nhãn thành Đánh ký hiệu.
+- Kiểu chữ hỗ trợ: Hiện hành, Isocp, txt, Arial.
+- Mặc định động: tiếng Việt dùng Arial cho ghi chú, các trường hợp còn lại dùng Isocp; ký hiệu mặc định Isocp.
+- Chỉ cảnh báo font khi ngôn ngữ hiện tại là tiếng Việt và kiểu chữ ghi chú khác Arial.
+- Lưu/đọc thêm NoteTextStyle và MarkTextStyle trong DDimnotes_settings.ini, giữ tương thích file setting cũ.
+- Khi tạo ghi chú/ký hiệu, áp TextStyle riêng mà không đổi màu, layer, cỡ chữ hay vị trí.
+- Tự tạo TextStyle Isocp/txt/Arial nếu bản vẽ chưa có style tương ứng.

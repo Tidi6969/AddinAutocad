@@ -1,0 +1,6 @@
+I:\ABC\C\DDimnotes-V91\bin\DDimnotes.dll
+I:\ABC\C\DDimnotes-V91\bin\DDimnotes.pdb
+I:\ABC\C\DDimnotes-V91\obj\Debug\DDimnotes.csproj.AssemblyReference.cache
+I:\ABC\C\DDimnotes-V91\obj\Debug\DDimnotes.csproj.CoreCompileInputs.cache
+I:\ABC\C\DDimnotes-V91\obj\Debug\DDimnotes.dll
+I:\ABC\C\DDimnotes-V91\obj\Debug\DDimnotes.pdb

@@ -1,0 +1,42 @@
+DDimnotes V59
+
+Mục tiêu:
+- Cải tiến bảng cài đặt theo cấu trúc mới của người dùng.
+- Giữ nền logic V58 cho lỗ ren thường, Line + XData ren, set_screwBSPR/MSW.
+
+Thay đổi chính:
+1. Bỏ combo Chế độ xử lý cũ trong form.
+   Thay bằng nhóm checkbox:
+   - Đường bao: Xmin,Ymin; Xmin,Ymax; Xmax,Ymin; Xmax,Ymax; Đỉnh biên dạng ngoài.
+   - Lỗ / biên dạng trong: Tâm lỗ; Tâm cung; Không thủng; Biên dạng trong.
+
+2. Gộp SIDE và DIM vào cột trái:
+   - 1. SIDE / HÌNH CHIẾU.
+   - 2. DIM / KÍCH THƯỚC.
+   Cột phải dành riêng cho:
+   - 3. NOTES / GHI CHÚ.
+
+3. SIDE:
+   - Thêm vị trí đặt hình chiếu: Tự động / Người dùng chọn vị trí.
+   - Thêm góc chiếu Tùy chọn.
+   - Thêm tỉ lệ chữ Dim.
+
+4. DIM:
+   - Thêm Dim đường bao ngoài: Dimordinate / Dimlinear.
+   - Bỏ Dim style hiện hành và Text style khỏi form.
+   - Cho cài trực tiếp màu dim line ACI và màu chữ Dim ACI.
+
+5. NOTES:
+   - Thêm tỉ lệ chữ Mark Notes.
+   - Thêm màu chữ Mark ACI.
+   - Vị trí chèn Notes có đủ 4 đỉnh và Người dùng chọn vị trí.
+   - Đưa thông số Mark đang cố định trong code ra form: vị trí Mark tự động, khoảng cách Mark, khoảng cách tối thiểu giữa Mark.
+
+6. Settings file DUser/DDimnotes_settings.ini:
+   - Giữ tương thích 12 dòng cũ.
+   - Bổ sung dòng mới phía sau để lưu các thông số form V59.
+
+Lưu ý:
+- Không sửa logic hình học lỗ ren V58.
+- Không sửa set_screwBSPR/MSW.
+- Không thêm bin/obj/Properties vào gói.

@@ -1,0 +1,5 @@
+DDimnotes V82
+- Fixed CAD tolerance not appearing after running the command.
+- Cause: ApplyDimTextOverride set Dimtol/Dimtp/Dimtm before AppendDim, but AppendDim then applied DDimnotes dimstyle data and reset the per-dimension tolerance override.
+- AppendDim now preserves/restores Dimtol, Dimtp, Dimtm and Dimtolj after applying the dimstyle data.
+- Dimension layer assignment still only changes the parent Dimension entity layer.

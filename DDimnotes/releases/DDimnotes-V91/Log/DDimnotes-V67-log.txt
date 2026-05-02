@@ -1,0 +1,20 @@
+DDimnotes V67
+
+1. Doi ten nhom bien checkbox che do xu ly theo kieu ro nghia dang Mode.*Dims.
+   - settings.Mode.BoundaryXminYminDims
+   - settings.Mode.BoundaryXminYmaxDims
+   - settings.Mode.BoundaryXmaxYminDims
+   - settings.Mode.BoundaryXmaxYmaxDims
+   - settings.Mode.BoundaryCornerDims (thuoc tinh gom 4 goc boundary)
+   - settings.Mode.OuterProfileVertexDims
+   - settings.Mode.HoleCenterDims
+   - settings.Mode.ArcCenterDims
+   - settings.Mode.DepthHoleDims
+   - settings.Mode.InnerProfileDims
+   - settings.Mode.SideThicknessDims
+   - settings.Mode.SideProjectionHoleDims
+   - settings.Mode.SideProjectionDepthDims
+
+2. Doi truong mode chu cai cu trong RuntimeSettings thanh ProcessingMode de tranh nham lan voi nhom checkbox Mode.
+
+3. Khong doi hanh vi xu ly/dim trong ban nay; muc tieu la lam ro ten bien trong code va du lieu form.

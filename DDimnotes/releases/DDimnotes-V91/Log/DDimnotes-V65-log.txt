@@ -1,0 +1,15 @@
+DDimnotes V65 - depth dimension fix
+
+1. Side-view depth dimensions now use the segment emitted by the side-view planner.
+   - Point 1: depth bottom inside the side view.
+   - Point 2: hole opening edge on the side view.
+
+2. Depth holes are no longer dimensioned by recalculating start/end in the dimension step.
+   - Planner records SideDepthDimSegment while generating side-view geometry.
+   - Dimension step only consumes these recorded points.
+
+3. Same-center depth holes are not stacked for the depth segment start anymore.
+   - Every hole with Depth != 0 starts from its side-view opening edge and ends at its own depth bottom.
+
+4. PickPoint movement is preserved.
+   - Recorded depth-dim segment points are shifted by the side-view move vector before dimensions are created.

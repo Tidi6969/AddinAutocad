@@ -1,0 +1,18 @@
+DDimnotes V61
+
+Baseline:
+- Built from V60.
+- Keep V58/V59/V60 thread and normal threaded-hole logic unchanged.
+
+Changes:
+1. Side-view custom placement now uses a MOVE-like DrawJig preview instead of asking a fixed pick point first.
+2. The side view is created first at the automatic position, then the created side-view entities are preview-moved as one group under the cursor.
+3. When the user confirms the jig, the displacement is committed to the original created entities with TransformBy.
+4. During the custom placement jig, ORTHOMODE is set to 1 and restored to the previous value afterward.
+5. If the jig is cancelled with ESC, the side view remains at the automatic position.
+6. Language messages updated for side-view creation/custom-placement cancel behavior.
+
+Notes:
+- No changes to set_screwBSPR/MSW logic.
+- No changes to Line + XData thread drawing logic.
+- No changes to V58 normal threaded-hole overflow logic.

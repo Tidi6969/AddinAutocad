@@ -1,0 +1,4 @@
+DDimnotes V79
+- Adjusted dimension layer application.
+- The layer option for "Đường đo" now only changes the parent Dimension entity layer after creation/recompute.
+- It does not participate in dimension internal generation, so dim text/line colors and dimstyle settings remain as configured.

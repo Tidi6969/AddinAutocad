@@ -1,0 +1,6 @@
+DDimnotes V87
+- Them tuy chon "Buoc ren" trong nhom Ghi chu cua hop thoai.
+- Dat "Ghi chu lo cat day" va "Buoc ren" tren cung mot dong de khong tang them dong thao tac.
+- Tang chieu cao nhom Ghi chu de cac o cuoi khong bi che khuất.
+- Luu/doc tuy chon Buoc ren vao DDimnotes_settings.ini dong 59.
+- Khi tao Notes, tuy chon Buoc ren ghi de PitchToggle trong cau hinh Notes; bat thi them pitch ren, tat thi bo pitch.

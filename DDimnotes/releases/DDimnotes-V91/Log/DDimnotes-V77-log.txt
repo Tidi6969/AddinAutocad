@@ -1,0 +1,8 @@
+DDimnotes V77
+- Thêm lựa chọn layer "Layer của đối tượng gốc" vào danh sách layer chuẩn.
+- Thêm dòng layer riêng cho "Đường bao ngoài hình chiếu"; tách khỏi "Chi tiết trong hình chiếu".
+- Cho phép "Layer của đối tượng gốc" chỉ ở hai mục: Đường bao ngoài hình chiếu và Lỗ vẽ ở hình chiếu.
+- Nếu chọn "Layer của đối tượng gốc" ở Chi tiết trong hình chiếu, Ghi chú, Ký hiệu hoặc Đường đo thì báo lỗi không tương thích.
+- Đường bao ngoài hình chiếu dùng layer của MAIN/source khi chọn source layer.
+- Lỗ vẽ ở hình chiếu dùng layer từng đối tượng lỗ gốc khi chọn source layer.
+- Cập nhật lang.dat và layer.dat theo các mục layer mới.

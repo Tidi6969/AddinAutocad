@@ -1,0 +1,5 @@
+DDimnotes V71
+- Kiem tra va bo sung co che tranh trung vi tri chen dimension cho cac mode dim tren hinh chinh.
+- Them bo nho vi tri leader dung chung cho ordinate dim chinh theo 4 phia bottom/top/left/right.
+- Boundary corner dims, outer profile vertex dims, inner profile vertex dims va hole/arc/depth hole center dims dung chung co che day leader theo truc neu khoang cach nho hon 2*DIMTXT.
+- OuterProfileVertexDims van bo qua cac diem trung voi boundary point dang duoc bat.

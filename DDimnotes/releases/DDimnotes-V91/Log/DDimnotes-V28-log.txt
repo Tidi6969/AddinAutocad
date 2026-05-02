@@ -1,0 +1,8 @@
+V28
+- Notes insert point is now based on the union extents of the original MAIN and the created side-view layout, so it remains correct for projection angles 0/90/180/270.
+- Replaced fixed one-axis Notes offset with two signed offset scales: X and Y, both measured by DIM text height.
+- Settings dialog defaults:
+  + Xmax,Ymax -> X = 4, Y = 0.
+  + Xmin,Ymin -> X = 0, Y = 4. Positive Y at Xmin,Ymin is applied outward to Y-; negative Y reverses direction.
+- Side-view spacing remains: SideViewGap = SideViewScale * DimTextHeight.
+- Version: 1.0.28.0.

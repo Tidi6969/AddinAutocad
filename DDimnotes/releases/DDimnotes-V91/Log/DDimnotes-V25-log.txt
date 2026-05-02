@@ -1,0 +1,5 @@
+V25
+- Sửa lại hộp thoại Settings bằng bố cục tính theo từng dòng, không dùng RowStyle thấp gây che chữ.
+- Mục Notes/Dim/Data được tăng chiều cao đúng số dòng, bỏ vùng trống thừa phía dưới.
+- Tỉ lệ đặt Notes mặc định đổi từ 1.00 thành 4.00.
+- Giữ tách riêng tỉ lệ đặt hình chiếu cạnh so với cỡ chữ dim và tỉ lệ đặt Notes so với khoảng cách hình chiếu.

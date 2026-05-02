@@ -1,0 +1,10 @@
+DDimnotes V33
+
+- Removed the settings dialog Data section.
+- Renumbered Ghi chú to section 6.
+- Runtime data validation is handled safely before creating geometry:
+  + MIS_SET.SET must exist in AutoCAD Support File Search Path.
+  + ti.dat is required only when selected objects contain metric thread M holes.
+  + Missing data shows a clear AutoCAD message/dialog and the command returns safely.
+- UserData remains reference/maintenance only; runtime files are not read from the ZIP/project folder and are not copied to output.
+- Version: 1.0.33.0.

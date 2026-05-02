@@ -1,0 +1,5 @@
+DDimnotes V72
+- Việt hóa lại toàn bộ nhãn checkbox trong mục A. Chế độ xử lý theo đúng chức năng thực tế.
+- Không dùng nhãn nửa Anh nửa Việt kiểu Dim/Boundary/Hole/Side trong phần hiển thị người dùng.
+- Giữ nguyên toàn bộ checkbox riêng và logic xử lý hiện có; chỉ đổi nhãn hiển thị trong hộp thoại.
+- Các nhãn chính đã đổi: đo điểm đường bao theo X/Y, đo các đỉnh biên dạng ngoài/trong, đo tâm lỗ tròn, đo tâm cung tròn, đo tâm lỗ/cung có chiều sâu, đo chiều dày/tâm lỗ/chiều sâu lỗ trên hình chiếu cạnh.

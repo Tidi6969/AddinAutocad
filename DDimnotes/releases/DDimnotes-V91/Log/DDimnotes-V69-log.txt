@@ -1,0 +1,3 @@
+DDimnotes V69
+- Sửa lỗi build CS0104: Polyline bị trùng giữa Autodesk.AutoCAD.DatabaseServices.Polyline và Autodesk.AutoCAD.GraphicsInterface.Polyline trong DDimnotesCommand.cs.
+- Chỉ rõ kiểu Autodesk.AutoCAD.DatabaseServices.Polyline cho phần đọc closed polyline dùng bởi OuterProfileVertexDims và InnerProfileDims.

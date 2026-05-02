@@ -1,0 +1,6 @@
+DDimnotes V84
+- Sửa lỗi dung sai đã nhập trong hộp thoại nhưng không hiện khi chạy.
+- Nguyên nhân chính: hàm đọc override dung sai của Dimension gọi sai reflection GetProperty, làm AppendDim không nhận biết được dim đã có tolerance để khôi phục sau khi áp dimstyle.
+- Di chuyển bước khôi phục tolerance sang sau khi append dimension và khôi phục lại lần nữa sau RecomputeDimensionBlock để tránh AutoCAD/reset dimstyle làm mất Dimtol/Dimtp/Dimtm.
+- Giữ nguyên nguyên tắc: layer đường đo chỉ đổi layer entity Dimension tổng, không can thiệp màu/chữ/kiểu bên trong dim.
+- Sửa ghi settings layer phụ của hình chiếu dùng đúng SideHoleLayerOption để tránh lệch mapping sau này.

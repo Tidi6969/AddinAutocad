@@ -1,0 +1,6 @@
+DDimnotes V83
+- Rà lại V82 sau phần dung sai/layer.
+- Sửa dung sai cho chế độ đo đường bao dạng Linear: trước đó chỉ tạo RotatedDimension trực tiếp nên chưa áp dung sai từ ô cài đặt.
+- Sửa dung sai tâm lỗ/tâm cung/lỗ có chiều sâu: không dùng một tolerance chung cho toàn bộ nhóm nữa; mỗi điểm/nhóm trục lấy tolerance theo loại dữ liệu tương ứng, ưu tiên lỗ có chiều sâu khi trùng tâm.
+- Sửa layer "Lỗ/chi tiết trong hình chiếu" khi chọn "Layer của đối tượng gốc": các chi tiết phụ trong hình chiếu như thickness phụ, curver và ren cạnh lấy layer theo đối tượng gốc, không dồn về layer MAIN.
+- Đường đo vẫn chỉ đổi layer của đối tượng Dimension tổng sau khi áp DimStyle/tolerance; không can thiệp vào thành phần bên trong Dimension.

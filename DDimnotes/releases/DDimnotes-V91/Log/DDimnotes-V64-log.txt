@@ -1,0 +1,18 @@
+DDimnotes V64
+
+Nền: V63.
+
+Nội dung sửa:
+1. Chiều sâu hình chiếu luôn đo thẳng (Dimlinear), đo giữa 2 điểm depth của lỗ trên hình chiếu; không đổi sang ordinate theo chế độ đường bao.
+2. Lỗ hình chiếu chỉ đo tọa độ tâm các Circle thật đã được vẽ trên hình chiếu side, phù hợp nhánh Line + XData ren đã tạo Circle/Arc/Line thật.
+3. Gốc ordinate cho lỗ hình chiếu:
+   - Gốc chiều dày là mặt xa của side view = 0.
+   - Gốc phương còn lại được gióng từ gốc hình chính sang side theo hướng chiếu.
+4. Bổ sung xét tránh chồng vị trí dim cho dim hình chiếu; khi cần đẩy đường đo thì ưu tiên phía xa / phía 0 của side view.
+5. Bảng chế độ xử lý đổi thứ tự dòng thành: checkbox -> ô dung sai -> văn bản giải nghĩa.
+
+Giữ nguyên:
+- Logic lỗ ren thường V58 đang OK.
+- Logic Line + XData ren Circle/Arc/Line thật.
+- Logic set_screwBSPR/MSW.
+- Form/settings V63 ngoài các điểm sửa trên.

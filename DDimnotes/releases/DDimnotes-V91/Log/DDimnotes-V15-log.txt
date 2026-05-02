@@ -1,0 +1,31 @@
+DDimnotes V15
+
+Base: DDimnotes V14
+
+Update:
+- Gộp phần lõi DNOTES vào command DDimnotes.
+- Khi chạy DDimnotes sẽ thực hiện cùng một lần:
+  1) vẽ hình chiếu cạnh,
+  2) tạo dim,
+  3) tạo Notes và mark notes theo logic DNOTES.
+- Không thêm command DNOTES/DNOTES1 mới vào plugin.
+- Thêm cài đặt trong S:
+  D = Mode Chiều sâu + Đường bao
+  B = Mode Đo đường bao
+  A = Mode Tất cả
+  R = Tỉ lệ/width factor chữ Notes
+  C = Màu chữ Notes
+  L = Tỉ lệ khoảng cách đặt bảng Notes
+  G = Góc chiếu, chỉ nhận 0/90/180/270
+- Prompt chính hiển thị mode và góc chiếu hiện hành:
+  Nhập cỡ chữ dim hoặc (S=Cài đặt mode) (D)(270):<dimtxt>:
+- Góc chiếu mặc định cho bản vẽ đang mở: 270 độ.
+- Notes được chèn tự động tại:
+  X = Xmax hình chính + khoảng cách giữa hình chính và side view * L
+  Y = Ymax hình chính
+- UserData bổ sung MIS_SET.SET dạng file tham khảo/maintenance.
+- Runtime vẫn đọc ti.dat và MIS_SET.SET qua AutoCAD Support File Search Path, không copy UserData vào output.
+- Giữ logic V14: lỗ đồng tâm chỉ ghép bậc khi lỗ nhỏ hơn có dấu '+'.
+
+Version:
+- Assembly version: 1.0.15.0

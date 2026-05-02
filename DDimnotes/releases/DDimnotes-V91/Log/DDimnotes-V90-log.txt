@@ -1,0 +1,6 @@
+DDimnotes V90
+- Cải tiến phần tạo ghi chú DNOTES cho các lỗ đồng tâm.
+- Trước khi tạo nhóm ghi chú/signature, mỗi bucket cùng tâm được tách lại theo dấu + trong tok1/code của XData gốc.
+- Hai lỗ cùng tâm khác đường kính chỉ được gom chung ghi chú khi lỗ nhỏ hơn có dấu + trong tok1/code.
+- Hai lỗ cùng tâm cùng đường kính chỉ gom khi một trong hai tok1/code có dấu +.
+- Dấu + chỉ dùng làm điều kiện phân nhóm từ XData, không dựa vào chuỗi ghi chú đã format/xuất ra.

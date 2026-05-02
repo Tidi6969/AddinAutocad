@@ -1,0 +1,14 @@
+DDimnotes V37
+
+- Updated assembly version to 1.0.37.0.
+- Changed UserData/lang.dat from runtime reference file to build-time EmbeddedResource in DDimnotes.csproj.
+- Reworked Lang.cs to read embedded lang.dat from the DLL instead of searching lang.dat on disk at runtime.
+- Runtime language selection now uses only MIS_SET.SET line 28 to select Lang_X(FullName_ShortName).
+- Kept Lang_0(English_En) as fixed fallback and key-level fallback.
+- Kept fallback warning limited to one warning per command run through Lang.BeginCommand().
+- Removed language reload from Entry.Initialize(); language data is loaded at the start of the DDimnotes command only.
+- Changed NtLang.Init() to compatibility no-op so notes/business code does not reload or map language by itself.
+- Added UserData/Quy_chuan_xu_ly_da_ngon_ngu_AutoCAD_CSharp_BuildTime.txt as the active maintenance standard.
+- Removed obsolete UserData/Xu_ly_du_lieu_ngon_ngu_chuan*.txt files to avoid conflict with the build-time standard.
+- Updated UserData/README.txt with the V37 language workflow.
+- Fixed extra-brace syntax error in NoteLogic.TryReadColorsFactor.

@@ -1,0 +1,6 @@
+DDimnotes V35
+- Removed mode keyword from the main dim text prompt; prompt now shows only the projection angle and dim text default.
+- Added Lang.cs following the shared language standard: MIS_SET.SET line 28 selects Lang_X block in lang.dat; fallback is Lang_0.
+- Added UserData/lang.dat as reference data for runtime deployment in AutoCAD Support File Search Path.
+- Converted main command prompts/messages and settings dialog UI text to Lang.T/Lang.F keys.
+- Replaced old hardcoded NtLang language mapping with a compatibility wrapper that delegates to Lang.cs.

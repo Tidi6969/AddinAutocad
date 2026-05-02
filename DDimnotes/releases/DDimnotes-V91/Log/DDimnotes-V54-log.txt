@@ -1,0 +1,40 @@
+DDimnotes V54 log
+==================
+
+Date: 2026-04-27
+Base: DDimnotes V53
+
+Scope
+-----
+Focused only on the new Line + XData metric-thread branch.
+Normal non-Line hole/thread handling remains unchanged.
+set_screwBSPR logic remains untouched.
+
+Changes
+-------
+1. Replaced polyline approximation for Line-thread end-view symbols:
+   - Inner thread circle is created as real AutoCAD Circle.
+   - Outer thread open curve is created as real AutoCAD Arc.
+   - Center marks are created as real AutoCAD Line entities.
+
+2. Fixed centerline length:
+   - V53 used total length 2.2 * D.
+   - V54 uses total length 1.2 * D.
+   - Example: D = 16 -> total centerline length = 19.2.
+
+3. Outer arc gap quadrant:
+   - The outer arc has one open quadrant.
+   - Open quadrant rotates by selected view direction:
+     0   -> gap 0..90
+     90  -> gap 90..180
+     180 -> gap 180..270
+     270 -> gap 270..360
+
+4. Infrastructure:
+   - Extended RectSpec to support Rectangle, Polyline, Circle, Arc, and Line output.
+   - Updated DrawUtils.CreateRectBlock to create the requested entity type.
+
+Version
+-------
+Assembly version: 1.0.54.0
+Assembly file version: 1.0.54.0

@@ -1,0 +1,5 @@
+DDimnotes V66 log
+
+1. Fixed AutoCAD .NET compile error CS0117 in DDimnotesCommand.cs because target API does not provide Vector3d.Zero.
+2. Replaced sideMoveTotal initialization with new Vector3d(0.0, 0.0, 0.0) for compatibility with older AutoCAD Geometry API.
+3. Package naming restored to base project version format: DDimnotes-V66.zip.

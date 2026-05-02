@@ -1,0 +1,17 @@
+DDimnotes V10 log
+
+- Tăng version lên 1.0.10.0.
+- Đơn giản hóa cấu trúc thư mục source theo yêu cầu.
+  + Khi tải ZIP về chỉ còn 3 thư mục: Log, Reference, UserData.
+  + Bỏ thư mục Utils khỏi gói source.
+  + Đưa các file helper cũ trong Utils ra trực tiếp thư mục gốc DDimnotes-V10.
+  + Bỏ thư mục bin rỗng khỏi ZIP; khi build, MSBuild sẽ tự tạo bin\ để chứa DDimnotes.dll.
+- Cập nhật DDimnotes.csproj để compile các file helper ở thư mục gốc.
+- Giữ nguyên logic runtime đọc ti.dat từ AutoCAD Support File Search Path.
+- Giữ nguyên logic lỗ ren M đã chuẩn ở V7/V8.
+
+V10 update:
+- Sửa nhận diện lỗ ren M_SCREWHO: NAME token[2] là cỡ ren danh nghĩa M, token[3] là depth.
+- Ví dụ NAME "1 M_SCREWHO 6.000 -15.000 ..." được hiểu là M6 depth -15.
+- Không dùng HOLE2MARK để đổi cỡ ren M trong trường hợp này.
+- Bỏ map đường kính khoan mồi token[8] của ti.dat thành key nhận diện ren để tránh nhận nhầm cỡ ren.

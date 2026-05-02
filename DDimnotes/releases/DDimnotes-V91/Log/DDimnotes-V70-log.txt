@@ -1,0 +1,4 @@
+DDimnotes V70
+- Fixed build error CS1061 in DDimnotesCommand.cs.
+- Replaced missing RuntimeSettings.TolDepthHoles with existing RuntimeSettings.TolBlindHoles.
+- DepthHoleDims now uses the existing blind/depth-hole tolerance field from the settings dialog.

@@ -1,0 +1,864 @@
+QUY CHUẨN XỬ LÝ ĐA NGÔN NGỮ CHO CODE AUTOCAD C#
+
+Mục đích:
+- Dùng một tiêu chuẩn xử lý ngôn ngữ thống nhất cho các tool AutoCAD/C#.
+- Code nghiệp vụ không xử lý ngôn ngữ.
+- Khi cần thêm ngôn ngữ mới, chỉ sửa file lang.dat theo đúng cấu trúc rồi build lại DLL.
+- Không sửa code nghiệp vụ.
+- Không thêm if/else ngôn ngữ trong form, command, dialog, class vẽ, class dữ liệu.
+- Không sửa Lang.cs nếu không thay đổi quy chuẩn parser.
+
+============================================================
+1. PHÂN BIỆT BUILD-TIME VÀ RUNTIME
+============================================================
+
+1.1. lang.dat là dữ liệu build-time
+
+lang.dat là file dữ liệu ngôn ngữ dùng khi build.
+
+Vị trí khuyến nghị trong project:
+
+UserData/lang.dat
+
+Trong file .csproj phải khai báo lang.dat là EmbeddedResource:
+
+<EmbeddedResource Include="UserData\lang.dat" />
+
+Khi build:
+UserData/lang.dat được nhúng vào DLL.
+
+Khi chạy AutoCAD:
+Code không đi tìm lang.dat ngoài ổ đĩa.
+Code đọc lang.dat từ embedded resource trong DLL.
+
+1.2. MIS_SET.SET là dữ liệu runtime
+
+MIS_SET.SET là file cấu hình runtime.
+
+Khi chạy lệnh, code phải tìm và đọc MIS_SET.SET để biết người dùng đang chọn ngôn ngữ nào.
+
+Cố định đọc:
+
+MIS_SET.SET
+line 28
+
+Line 28 chứa số nguyên X.
+X dùng để tìm block Lang_X(...) trong lang.dat đã nhúng trong DLL.
+
+Ví dụ:
+
+MIS_SET.SET line 28 = 3
+
+thì code dùng block:
+
+Lang_3(...)
+
+trong embedded lang.dat.
+
+1.3. Kết luận quan trọng
+
+Runtime chỉ cần tìm MIS_SET.SET.
+
+Runtime không tìm lang.dat ngoài ổ đĩa.
+
+Muốn thêm ngôn ngữ mới:
+1. Sửa UserData/lang.dat trong source project.
+2. Thêm block Lang_X(FullName_ShortName).
+3. Thêm đủ key.
+4. Build lại DLL.
+5. Đặt MIS_SET.SET line 28 = X.
+
+============================================================
+2. NGUYÊN TẮC BẮT BUỘC
+============================================================
+
+2.1. Có một nguồn duy nhất quyết định ngôn ngữ
+
+Ngôn ngữ đang dùng được quyết định duy nhất bởi:
+
+MIS_SET.SET line 28
+
+Không dùng setting khác.
+Không dùng Windows language.
+Không dùng AutoCAD language.
+Không dùng file phụ khác.
+
+2.2. Code nghiệp vụ không được xử lý ngôn ngữ
+
+Code nghiệp vụ không được viết:
+
+if language == Vietnamese
+if language == English
+if language == Chinese
+switch language
+
+Code nghiệp vụ chỉ được gọi:
+
+Lang.T("KeyName")
+
+Ví dụ:
+
+buttonOk.Text = Lang.T("BtnOK");
+buttonCancel.Text = Lang.T("BtnCancel");
+labelBasePlate.Text = Lang.T("BasePlate");
+MessageBox.Show(Lang.T("MsgNoData"));
+
+2.3. Lang.cs là nơi duy nhất xử lý ngôn ngữ
+
+Lang.cs chịu trách nhiệm:
+- Tìm MIS_SET.SET.
+- Đọc line 28.
+- Validate giá trị line 28.
+- Đọc lang.dat từ embedded resource trong DLL.
+- Đọc tất cả block Lang_X(FullName_ShortName).
+- Chọn block theo X.
+- Fallback khi lỗi.
+- Trả text theo key.
+
+Không đặt logic đọc MIS_SET.SET ở form, dialog, command, class vẽ, class dữ liệu.
+
+============================================================
+3. CẤU TRÚC BẮT BUỘC CỦA lang.dat
+============================================================
+
+lang.dat dùng dạng block.
+Mỗi block là một ngôn ngữ.
+
+Cấu trúc bắt buộc:
+
+Lang_X(FullName_ShortName)
+KEY=VALUE
+KEY=VALUE
+KEY=VALUE
+-
+
+Trong đó:
+
+Lang_:
+- Là dấu hiệu bắt đầu block ngôn ngữ.
+- Chỉ dòng đúng đủ cấu trúc Lang_X(FullName_ShortName) mới được xem là header.
+- Không được nhận nhầm các key như LANG_NAME thành header.
+
+X:
+- Là số nguyên.
+- Dùng để so sánh với MIS_SET.SET line 28.
+- Nếu MIS_SET.SET line 28 = X thì dùng block Lang_X(...).
+
+FullName:
+- Tên đầy đủ của ngôn ngữ.
+- Dùng để người bảo trì dễ đọc.
+- Không dùng để chọn ngôn ngữ.
+
+ShortName:
+- Tên viết tắt của ngôn ngữ.
+- Dùng để người bảo trì dễ đọc.
+- Không dùng để chọn ngôn ngữ.
+
+Dấu gạch dưới "_" trong phần ngoặc:
+- Là điểm phân tách giữa FullName và ShortName.
+
+Dấu "-":
+- Là dấu kết thúc block.
+- Mỗi block phải kết thúc bằng một dòng chỉ có dấu "-".
+
+3.1. Ví dụ hợp lệ
+
+Lang_0(English_En)
+LANG_NAME=English
+BtnOK=OK
+BtnCancel=Cancel
+BtnRemove=Remove
+-
+
+Lang_1(Vietnamese_Vn)
+LANG_NAME=Tiếng Việt
+BtnOK=Đồng ý
+BtnCancel=Hủy
+BtnRemove=Xóa
+-
+
+Lang_2(Chinese_Cn)
+LANG_NAME=中文
+BtnOK=确定
+BtnCancel=取消
+BtnRemove=删除
+-
+
+Lang_3(Japan_Jp)
+LANG_NAME=日本語
+BtnOK=OK
+BtnCancel=キャンセル
+BtnRemove=削除
+-
+
+3.2. Ví dụ không hợp lệ
+
+Lang_3
+Lang_3(Japan)
+Lang_3_Japan_Jp
+LANG_3(Japan_Jp)
+Lang_X(Japan_Jp)
+
+Các dòng không đúng cấu trúc header phải bị bỏ qua.
+
+3.3. Regex nhận diện header
+
+Chỉ dùng full-match regex để nhận diện header.
+
+Regex gợi ý:
+
+^Lang_(\d+)\(([^_()]+)_([^_()]+)\)$
+
+Không dùng:
+
+StartsWith("Lang_", IgnoreCase)
+
+Lý do:
+- Có thể nhận nhầm LANG_NAME là header.
+- Có thể làm hỏng block ngôn ngữ và gây fallback sai.
+
+============================================================
+4. FALLBACK
+============================================================
+
+4.1. Lang_0(English_En) là fallback cố định
+
+Trong mọi project dùng quy chuẩn này, lang.dat bắt buộc phải có:
+
+Lang_0(English_En)
+
+Lang_0 là tiếng Anh và là fallback cố định.
+
+Không dùng quy ước cũ kiểu:
+
+0 = Chinese
+1 = Vietnamese
+2 = English
+
+Quy ước mới là:
+
+MIS_SET.SET line 28 = X
+→ tìm Lang_X trong lang.dat
+→ nếu lỗi thì fallback Lang_0(English_En)
+
+4.2. Khi nào fallback
+
+Fallback về Lang_0(English_En) khi:
+- Không tìm thấy MIS_SET.SET.
+- MIS_SET.SET thiếu line 28.
+- Line 28 không phải số nguyên hợp lệ.
+- Line 28 là số âm.
+- Không đọc được embedded lang.dat trong DLL.
+- Embedded lang.dat không có Lang_0(English_En).
+- Embedded lang.dat không có block Lang_X tương ứng với line 28.
+- Header Lang_X sai cấu trúc.
+- Key bị thiếu trong ngôn ngữ hiện tại.
+
+4.3. Fallback theo key
+
+Khi gọi:
+
+Lang.T("SomeKey")
+
+Thứ tự xử lý:
+
+1. Tìm SomeKey trong ngôn ngữ hiện tại.
+2. Nếu không có, tìm SomeKey trong Lang_0(English_En).
+3. Nếu Lang_0 cũng không có, trả lại chính chuỗi "SomeKey".
+
+Không được để thiếu key làm crash lệnh AutoCAD.
+
+============================================================
+5. THÊM NGÔN NGỮ MỚI
+============================================================
+
+Đây là mục tiêu quan trọng nhất của quy chuẩn này.
+
+Khi thêm ngôn ngữ mới:
+- Chỉ sửa UserData/lang.dat.
+- Không sửa code nghiệp vụ.
+- Không sửa form.
+- Không sửa command.
+- Không thêm if/else theo ngôn ngữ.
+- Không sửa Lang.cs nếu không thay đổi quy chuẩn parser.
+
+5.1. Các bước thêm ngôn ngữ mới
+
+Bước 1:
+Thêm block mới vào UserData/lang.dat:
+
+Lang_X(FullName_ShortName)
+LANG_NAME=...
+Key1=...
+Key2=...
+Key3=...
+-
+
+Bước 2:
+Đảm bảo block mới có đủ key như Lang_0.
+
+Bước 3:
+Build lại DLL để lang.dat mới được nhúng vào DLL.
+
+Bước 4:
+Đặt MIS_SET.SET line 28 = X.
+
+Bước 5:
+Chạy lại lệnh AutoCAD.
+
+5.2. Ví dụ thêm tiếng Nhật
+
+Thêm vào UserData/lang.dat:
+
+Lang_3(Japan_Jp)
+LANG_NAME=日本語
+BtnOK=OK
+BtnCancel=キャンセル
+BtnRemove=削除
+BasePlate=ベースプレート
+Direction=方向
+StartDepth=開始深さ
+MsgNoData=有効なデータがありません。
+-
+
+Đặt:
+
+MIS_SET.SET line 28 = 3
+
+Build lại DLL.
+
+Khi chạy lệnh:
+- Lang.Reload() đọc MIS_SET.SET line 28 = 3.
+- Lang.cs đọc embedded lang.dat trong DLL.
+- Tìm block Lang_3(Japan_Jp).
+- Nếu block hợp lệ thì tự dùng tiếng Nhật.
+- Không sửa code.
+
+5.3. Ví dụ thêm tiếng Hàn
+
+Thêm vào UserData/lang.dat:
+
+Lang_4(Korean_Kr)
+LANG_NAME=한국어
+BtnOK=OK
+BtnCancel=취소
+BtnRemove=삭제
+BasePlate=베이스 플레이트
+Direction=방향
+StartDepth=시작 깊이
+MsgNoData=유효한 데이터가 없습니다.
+-
+
+Đặt:
+
+MIS_SET.SET line 28 = 4
+
+Build lại DLL.
+
+============================================================
+6. DỊCH THEO NGỮ CẢNH CHUYÊN NGÀNH
+============================================================
+
+Khi thêm ngôn ngữ mới, không dịch máy móc từng chữ.
+
+Phải dịch theo ngữ cảnh:
+- AutoCAD.
+- thiết kế khuôn.
+- khuôn dập.
+- punch.
+- die.
+- plate.
+- layer.
+- depth.
+- gap.
+- thuật ngữ kỹ thuật mà kỹ sư khuôn đọc hiểu.
+
+Ví dụ:
+- Punch Type nên dịch theo nghĩa loại punch.
+- Base Plate nên dùng thuật ngữ kỹ thuật quen dùng.
+- Depth là chiều sâu / độ sâu kỹ thuật.
+- Notes là ghi chú kỹ thuật.
+
+Nếu không chắc thuật ngữ chuyên ngành, ưu tiên giữ thuật ngữ kỹ thuật quen dùng hơn là dịch văn chương.
+
+============================================================
+7. ĐỌC LẠI DỮ LIỆU KHI CHẠY LỆNH
+============================================================
+
+Mỗi lần chạy lệnh AutoCAD phải đọc lại MIS_SET.SET.
+
+Không được chỉ đọc MIS_SET.SET một lần khi load DLL.
+
+Lý do:
+- Người dùng có thể sửa MIS_SET.SET line 28 trong lúc AutoCAD đang mở.
+- Lần chạy lệnh tiếp theo phải nhận giá trị mới.
+
+lang.dat là embedded resource trong DLL.
+Nếu sửa lang.dat thì phải build lại DLL.
+Không thể sửa lang.dat ngoài ổ đĩa rồi mong DLL cũ tự nhận.
+
+7.1. Mẫu gọi trong lệnh
+
+[CommandMethod("DApunch")]
+public void Cmd_DApunch()
+{
+    Lang.BeginCommand();
+    Lang.Reload();
+
+    // Code nghiệp vụ bên dưới chỉ dùng Lang.T(...)
+}
+
+Lang.BeginCommand():
+- Reset trạng thái cảnh báo fallback cho lần chạy lệnh hiện tại.
+- Nếu bị fallback, chỉ báo một lần trong lần chạy đó.
+- Lần chạy lệnh sau nếu vẫn lỗi thì báo lại một lần.
+
+Lang.Reload():
+- Đọc lại MIS_SET.SET line 28.
+- Đọc embedded lang.dat từ DLL.
+- Chọn lại ngôn ngữ.
+
+============================================================
+8. CẢNH BÁO FALLBACK
+============================================================
+
+Nếu phải fallback, code nên báo cho người dùng biết.
+
+Quy tắc báo:
+- Mỗi lần chạy lệnh chỉ báo một lần.
+- Không spam nhiều thông báo trong cùng một lần chạy.
+- Lần chạy lệnh tiếp theo nếu vẫn lỗi thì báo lại một lần.
+
+Ví dụ thông báo:
+
+[Language] MIS_SET.SET line 28 = 5 nhưng không có block Lang_5 trong embedded lang.dat. Fallback: Lang_0(English_En).
+
+Không được dùng biến static kiểu "_warned" để khóa cảnh báo cho cả phiên AutoCAD.
+Nếu dùng biến static thì phải reset bằng Lang.BeginCommand() ở đầu mỗi lần chạy lệnh.
+
+============================================================
+9. TÌM MIS_SET.SET
+============================================================
+
+Lang.cs phải tự tìm MIS_SET.SET.
+Không yêu cầu người dùng chọn file thủ công.
+
+Thứ tự tìm khuyến nghị:
+
+1. DUser trong AutoCAD Support File Search Path.
+2. Trực tiếp trong AutoCAD Support File Search Path.
+3. Thư mục chứa DLL.
+4. DUser nằm cạnh DLL.
+
+Không hardcode đường dẫn tuyệt đối như:
+
+E:\ABC\...
+
+Với project có thư mục UserData:
+- UserData chỉ là dữ liệu mẫu/đóng gói để bảo trì.
+- Runtime nên đọc MIS_SET.SET từ DUser hoặc AutoCAD Support File Search Path.
+- Runtime không phụ thuộc trực tiếp vào thư mục UserData của source project.
+
+============================================================
+10. ĐỌC lang.dat TỪ EMBEDDED RESOURCE
+============================================================
+
+lang.dat không được tìm ở runtime.
+
+Lang.cs phải đọc lang.dat từ embedded resource trong DLL.
+
+Trong .csproj:
+
+<EmbeddedResource Include="UserData\lang.dat" />
+
+Khi đọc resource, không nên hardcode namespace quá chặt.
+Nên tìm resource có tên kết thúc bằng:
+
+.lang.dat
+
+hoặc chính xác:
+
+lang.dat
+
+Lý do:
+Tên resource có thể bị ghép namespace/project name, ví dụ:
+
+DApunch.UserData.lang.dat
+A_punch_Dialog.UserData.lang.dat
+
+10.1. Logic tìm embedded lang.dat
+
+- Lấy assembly hiện tại: typeof(Lang).Assembly
+- Lấy danh sách resource: GetManifestResourceNames()
+- Tìm tên resource kết thúc bằng ".lang.dat" hoặc "lang.dat"
+- Mở stream bằng GetManifestResourceStream(...)
+- Đọc text bằng StreamReader
+
+Nếu không tìm thấy:
+- Fallback.
+- Báo cảnh báo 1 lần trong lần chạy lệnh.
+
+============================================================
+11. KIỂM TRA TRƯỚC KHI GIAO FILE
+============================================================
+
+Trước khi giao code/build, kiểm tra:
+
+1. UserData/lang.dat tồn tại trong project.
+2. .csproj khai báo UserData/lang.dat là EmbeddedResource.
+3. DLL build ra có embedded lang.dat.
+4. lang.dat có Lang_0(English_En).
+5. Mỗi block có header đúng cấu trúc Lang_X(FullName_ShortName).
+6. Mỗi block kết thúc bằng "-".
+7. Không trùng X giữa các block.
+8. Các block có cùng danh sách key.
+9. Key không rỗng.
+10. Dòng key/value có dạng KEY=VALUE.
+11. Không có text UI/message còn hardcode trong code nghiệp vụ.
+12. MIS_SET.SET line 28 là số nguyên >= 0.
+13. Nếu line 28 trỏ tới Lang_X thì embedded lang.dat có block Lang_X.
+
+Nếu block ngôn ngữ mới thiếu key:
+- Không được crash.
+- Key thiếu phải fallback về Lang_0.
+- Nên ghi log/check để người bảo trì bổ sung.
+
+============================================================
+12. MẪU Lang.cs THAM KHẢO
+============================================================
+
+Mẫu này là logic tham khảo.
+Có thể đổi namespace, tên command, cách ghi log theo project.
+Không được đổi nguyên tắc chính.
+
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Text.RegularExpressions;
+using Autodesk.AutoCAD.ApplicationServices.Core;
+
+internal static class Lang
+{
+    private const int MisSetLanguageLineNumber = 28;
+    private const int FallbackLangId = 0; // Lang_0(English_En)
+
+    private static int _currentLangId = FallbackLangId;
+    private static bool _fallbackWarnedThisCommand = false;
+
+    private static readonly Dictionary<int, Dictionary<string, string>> _textsByLang =
+        new Dictionary<int, Dictionary<string, string>>();
+
+    private static readonly Regex LangHeaderRegex = new Regex(
+        @"^Lang_(\d+)\(([^_()]+)_([^_()]+)\)$",
+        RegexOptions.Compiled);
+
+    public static void BeginCommand()
+    {
+        _fallbackWarnedThisCommand = false;
+    }
+
+    public static void Reload()
+    {
+        _textsByLang.Clear();
+
+        int requestedLangId = ReadLanguageIdFromMisSet();
+
+        string embeddedText = ReadEmbeddedLangDat();
+        if (string.IsNullOrEmpty(embeddedText))
+        {
+            UseFallback("Không đọc được embedded lang.dat trong DLL.");
+            return;
+        }
+
+        LoadLangDatFromText(embeddedText);
+
+        if (!_textsByLang.ContainsKey(FallbackLangId))
+        {
+            UseFallback("Embedded lang.dat không có Lang_0(English_En).");
+            return;
+        }
+
+        if (_textsByLang.ContainsKey(requestedLangId))
+        {
+            _currentLangId = requestedLangId;
+            return;
+        }
+
+        UseFallback("MIS_SET.SET line 28 = " + requestedLangId +
+                    " nhưng không có block Lang_" + requestedLangId + " trong embedded lang.dat.");
+    }
+
+    public static string T(string key)
+    {
+        if (string.IsNullOrEmpty(key))
+            return string.Empty;
+
+        Dictionary<string, string> current;
+        if (_textsByLang.TryGetValue(_currentLangId, out current))
+        {
+            string value;
+            if (current.TryGetValue(key, out value))
+                return value;
+        }
+
+        Dictionary<string, string> fallback;
+        if (_textsByLang.TryGetValue(FallbackLangId, out fallback))
+        {
+            string fallbackValue;
+            if (fallback.TryGetValue(key, out fallbackValue))
+                return fallbackValue;
+        }
+
+        return key;
+    }
+
+    private static int ReadLanguageIdFromMisSet()
+    {
+        string path = FindDataFile("MIS_SET.SET");
+
+        if (string.IsNullOrEmpty(path) || !File.Exists(path))
+        {
+            UseFallback("Không tìm thấy MIS_SET.SET.");
+            return FallbackLangId;
+        }
+
+        try
+        {
+            string[] lines = File.ReadAllLines(path);
+
+            if (lines.Length < MisSetLanguageLineNumber)
+            {
+                UseFallback("MIS_SET.SET thiếu line 28.");
+                return FallbackLangId;
+            }
+
+            string raw = (lines[MisSetLanguageLineNumber - 1] ?? string.Empty).Trim();
+
+            int langId;
+            if (!int.TryParse(raw, out langId) || langId < 0)
+            {
+                UseFallback("MIS_SET.SET line 28 không hợp lệ: " + raw);
+                return FallbackLangId;
+            }
+
+            return langId;
+        }
+        catch (System.Exception ex)
+        {
+            UseFallback("Lỗi đọc MIS_SET.SET: " + ex.Message);
+            return FallbackLangId;
+        }
+    }
+
+    private static string ReadEmbeddedLangDat()
+    {
+        try
+        {
+            Assembly asm = typeof(Lang).Assembly;
+            string resourceName = asm.GetManifestResourceNames()
+                .FirstOrDefault(n =>
+                    n.EndsWith(".lang.dat", StringComparison.OrdinalIgnoreCase) ||
+                    string.Equals(n, "lang.dat", StringComparison.OrdinalIgnoreCase));
+
+            if (string.IsNullOrEmpty(resourceName))
+                return null;
+
+            using (Stream stream = asm.GetManifestResourceStream(resourceName))
+            {
+                if (stream == null)
+                    return null;
+
+                using (StreamReader reader = new StreamReader(stream))
+                    return reader.ReadToEnd();
+            }
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
+    private static void LoadLangDatFromText(string text)
+    {
+        int? currentLangId = null;
+        Dictionary<string, string> currentBlock = null;
+
+        string[] lines = text.Replace("\r\n", "\n").Replace('\r', '\n').Split('\n');
+
+        foreach (string rawLine in lines)
+        {
+            string line = (rawLine ?? string.Empty).Trim();
+
+            if (line.Length == 0)
+                continue;
+
+            Match headerMatch = LangHeaderRegex.Match(line);
+            if (headerMatch.Success)
+            {
+                FlushBlock(currentLangId, currentBlock);
+
+                int id = int.Parse(headerMatch.Groups[1].Value);
+
+                currentLangId = id;
+                currentBlock = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+                continue;
+            }
+
+            if (line == "-")
+            {
+                FlushBlock(currentLangId, currentBlock);
+                currentLangId = null;
+                currentBlock = null;
+                continue;
+            }
+
+            if (currentBlock == null)
+                continue;
+
+            int equalIndex = line.IndexOf('=');
+            if (equalIndex <= 0)
+                continue;
+
+            string key = line.Substring(0, equalIndex).Trim();
+            string value = line.Substring(equalIndex + 1);
+
+            if (key.Length > 0)
+                currentBlock[key] = value;
+        }
+
+        FlushBlock(currentLangId, currentBlock);
+    }
+
+    private static void FlushBlock(int? langId, Dictionary<string, string> block)
+    {
+        if (!langId.HasValue || block == null || block.Count == 0)
+            return;
+
+        _textsByLang[langId.Value] = block;
+    }
+
+    private static void UseFallback(string reason)
+    {
+        _currentLangId = FallbackLangId;
+
+        if (_fallbackWarnedThisCommand)
+            return;
+
+        _fallbackWarnedThisCommand = true;
+
+        try
+        {
+            var doc = Application.DocumentManager.MdiActiveDocument;
+            if (doc != null && doc.Editor != null)
+            {
+                doc.Editor.WriteMessage(
+                    "\n[Language] " + reason + " Fallback: Lang_0(English_En).");
+            }
+        }
+        catch
+        {
+        }
+    }
+
+    private static string FindDataFile(string fileName)
+    {
+        if (string.IsNullOrEmpty(fileName))
+            return null;
+
+        string supportPaths = GetAcadSupportPaths();
+
+        foreach (string supportPath in SplitPaths(supportPaths))
+        {
+            string duserPath = Path.Combine(supportPath, "DUser", fileName);
+            if (File.Exists(duserPath))
+                return duserPath;
+        }
+
+        foreach (string supportPath in SplitPaths(supportPaths))
+        {
+            string directPath = Path.Combine(supportPath, fileName);
+            if (File.Exists(directPath))
+                return directPath;
+        }
+
+        try
+        {
+            string dllDir = Path.GetDirectoryName(typeof(Lang).Assembly.Location);
+            if (!string.IsNullOrEmpty(dllDir))
+            {
+                string localPath = Path.Combine(dllDir, fileName);
+                if (File.Exists(localPath))
+                    return localPath;
+
+                string localDUserPath = Path.Combine(dllDir, "DUser", fileName);
+                if (File.Exists(localDUserPath))
+                    return localDUserPath;
+            }
+        }
+        catch
+        {
+        }
+
+        return null;
+    }
+
+    private static string GetAcadSupportPaths()
+    {
+        try
+        {
+            object value = Application.GetSystemVariable("ACADPREFIX");
+            return value == null ? string.Empty : value.ToString();
+        }
+        catch
+        {
+            return string.Empty;
+        }
+    }
+
+    private static IEnumerable<string> SplitPaths(string paths)
+    {
+        if (string.IsNullOrEmpty(paths))
+            yield break;
+
+        string[] parts = paths.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+
+        foreach (string part in parts)
+        {
+            string p = part.Trim();
+            if (p.Length > 0 && Directory.Exists(p))
+                yield return p;
+        }
+    }
+}
+
+============================================================
+13. TÓM TẮT NGẮN GỌN
+============================================================
+
+Build-time:
+UserData/lang.dat
+→ EmbeddedResource
+→ nhúng vào DLL
+
+Runtime:
+Chạy lệnh
+→ Lang.BeginCommand()
+→ Lang.Reload()
+→ đọc MIS_SET.SET line 28
+→ đọc embedded lang.dat trong DLL
+→ tìm Lang_X
+→ nếu lỗi fallback Lang_0(English_En)
+
+Muốn thêm ngôn ngữ mới:
+1. Thêm block Lang_X(FullName_ShortName) vào UserData/lang.dat.
+2. Thêm đủ key dịch theo ngữ cảnh chuyên ngành.
+3. Build lại DLL.
+4. Đặt MIS_SET.SET line 28 = X.
+5. Chạy lệnh.
+
+Không sửa code nghiệp vụ.
+Không sửa form.
+Không thêm if/else ngôn ngữ.
+Không tìm lang.dat ngoài ổ đĩa khi runtime.

@@ -1,0 +1,6 @@
+DDimnotes V32
+
+- Sửa hộp thoại Settings: tất cả ô nhập/list/editbox ở các mục dưới dùng cùng chiều rộng và cùng mép phải với ô list Chọn chế độ.
+- Không còn dùng chiều rộng 2/3 cho các ô bên dưới.
+- Giữ nguyên logic tính toán/vẽ của V31.
+- Version: 1.0.32.0.

@@ -1,0 +1,8 @@
+DDimnotes V20
+
+- Reworked dimension override logic to follow the standard AutoCAD .NET path:
+  Database.GetDimstyleData -> edit DimStyleTableRecord -> Dimension.SetDimstyleData.
+- Removed the V19 reflection-based Dimtxsty/TextStyleId forcing path.
+- Dimension text style now remains from the current/effective dimension style data, not current TEXTSTYLE.
+- DTE-style values are applied to the DimStyleTableRecord data copy; MIS_SET line 27 controls dim/extension line color and line 26 controls dim text color.
+- Version bumped to 1.0.20.0.

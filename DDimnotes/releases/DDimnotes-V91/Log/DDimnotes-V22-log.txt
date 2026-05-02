@@ -1,0 +1,6 @@
+DDimnotes V22
+
+- Fixed V21 compile error in DDimnotesCommand.CreateDims call by passing the missing DimStyleTableRecord argument.
+- Fixed AutoCAD .NET Database.GetDimstyleData usage for this SDK by using the parameterless return-value overload.
+- Kept V20/V21 dim standardization logic: edit effective DimStyleTableRecord copy and apply with Dimension.SetDimstyleData.
+- Version bumped to 1.0.22.0.

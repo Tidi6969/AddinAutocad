@@ -1,0 +1,9 @@
+DDimnotes V76
+- Thêm mục 3. Layer trong hộp thoại cài đặt.
+- Nguồn danh sách layer lấy từ UserData/layer.dat khi đóng gói/build source.
+- Thêm 5 lựa chọn layer riêng: Hình chiếu, Ghi chú, Ký hiệu, Đường đo, Lỗ vẽ ở hình chiếu.
+- Thêm LayerCatalog để diễn giải các mã layer: (c), (p), (d), (t), (*), (*_), *_O, *_W, *_M, *_TXT.
+- Ghi chú và ký hiệu có thể đặt layer riêng.
+- Đường đo được đặt layer riêng khi tạo dimension.
+- Hình chiếu và lỗ vẽ trong hình chiếu được tách layer khi planner tạo side view.
+- Bổ sung key đa ngôn ngữ cho mục Layer và các lựa chọn layer hiện có trong lang.dat.

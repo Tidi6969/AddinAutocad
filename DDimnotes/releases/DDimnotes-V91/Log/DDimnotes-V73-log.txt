@@ -1,0 +1,6 @@
+DDimnotes V73
+
+- Sửa Lang.cs để header ngôn ngữ đọc động theo dạng Lang_N(TenDayDu_MaNgan), không giới hạn số lượng ngôn ngữ theo code.
+- Người dùng có thể thêm Lang_4, Lang_5... vào UserData/lang.dat, đặt MIS_SET.SET line 28 tương ứng, build lại DLL là chương trình tự nhận.
+- Chuẩn hóa UserData/lang.dat: 4 ngôn ngữ hiện có Lang_0 English, Lang_1 Vietnamese, Lang_2 Chinese, Lang_3 Japan đều có đầy đủ cùng một bộ key.
+- Dọn các key trùng trong lang.dat và bổ sung dịch đầy đủ cho các nhãn mới của hộp thoại chế độ xử lý.

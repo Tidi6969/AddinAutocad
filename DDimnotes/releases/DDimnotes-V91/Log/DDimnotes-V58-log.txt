@@ -1,0 +1,15 @@
+DDimnotes V58
+
+Pham vi sua:
+- Sua tiep logic lo ren thuong tu V57.
+
+Noi dung:
+1. Truong hop bang: L >= T duoc dua vao nhanh xu ly chong tho ra ngoai, khong con chi dung L > T.
+2. Khi D > T, xu ly nhu truong hop D = T.
+3. Neu chieu sau ren cham/vuot chieu day tam, dau ket thuc cua lo to/duong kinh ngoai ren khong duoc tao diem vuot qua chieu day.
+4. Lo nho/duong kinh ren - pitch trong nhanh nay van bo dinh va ve thung xuyen suot chieu day.
+
+Giu nguyen:
+- Logic Line + XData ren cua V54.
+- set_screwBSPR/MSW.
+- Cau truc ZIP khong them bin/obj/Properties.

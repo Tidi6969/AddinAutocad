@@ -1,0 +1,17 @@
+DDimnotes V51 log
+
+Scope:
+- Base: V50 accepted set_screwBSPR behavior.
+- Added separate handling for side-face metric threads whose source entity is a Line centerline.
+
+Changes:
+- Added SideThreadRec model.
+- Added DDimnotesExtractors.TryExtractSideThread().
+- In DDimnotesCommand, Line + metric-thread XData is separated into sideThreads and is not added to normal holes.
+- In DDimnotesPlanner, sideThreads are rendered in a separate pass and are not grouped with Circle/front-view hole logic.
+- Side thread source Line is treated as the centerline; XData depth is ignored.
+- The Line geometry determines the thread segment; it is projected only when roughly parallel to the generated side-view thickness axis.
+- Normal Circle-based holes/threads and set_screwBSPR logic are left unchanged.
+
+Version:
+- Assembly version: 1.0.51.0

@@ -1,0 +1,7 @@
+DDimnotes V36
+- Reworked Lang.cs to follow Xu_ly_du_lieu_ngon_ngu_chuan_V2.
+- Language source remains MIS_SET.SET line 28.
+- lang.dat lookup order: DUser under support path, direct support path, DLL folder, DUser beside DLL.
+- Strict Lang_X(FullName_ShortName) parser and command-scoped fallback warning.
+- Removed built-in UI text table; fallback uses Lang_0 from lang.dat, otherwise returns key.
+- Version: 1.0.36.0.
